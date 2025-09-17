@@ -1,0 +1,2920 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_11ea599fdafa58f7c2c36d3e958ce07e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 50px; left: 50px; width: 200px; height: 120px; 
+            background-color: white; border:2px solid grey; z-index:9999; 
+            font-size:14px; padding: 10px">
+<p><b>Legend</b></p>
+<p><i class="fa fa-wheelchair" style="color:green"></i> Wheelchair Accessible</p>
+<p><i class="fa fa-ban" style="color:red"></i> Not Accessible</p>
+<p><i class="fa fa-question" style="color:gray"></i> Unknown</p>
+</div>
+    
+            <div class="folium-map" id="map_11ea599fdafa58f7c2c36d3e958ce07e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_11ea599fdafa58f7c2c36d3e958ce07e = L.map(
+                "map_11ea599fdafa58f7c2c36d3e958ce07e",
+                {
+                    center: [-37.81067593260222, 144.96161480656656],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_735f16eb89f225a2c10e748787f55015 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_735f16eb89f225a2c10e748787f55015.addTo(map_11ea599fdafa58f7c2c36d3e958ce07e);
+        
+    
+            var marker_cluster_be9409f4deb25fe304b701b1655ec787 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_74ed7fefd879fd40ae493679d475d214 = L.marker(
+                [-37.82764304616528, 144.9818116607595],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_5d6770fc1c7e75fb458216d771a7b273 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f580210448b710ab57c31e59c298152 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_95f3c8030580e9108f95a4298341cf91 = $(`<div id="html_95f3c8030580e9108f95a4298341cf91" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 107 - Alexandra Park</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_2f580210448b710ab57c31e59c298152.setContent(html_95f3c8030580e9108f95a4298341cf91);
+            
+        
+
+        marker_74ed7fefd879fd40ae493679d475d214.bindPopup(popup_2f580210448b710ab57c31e59c298152)
+        ;
+
+        
+    
+    
+                marker_74ed7fefd879fd40ae493679d475d214.setIcon(icon_5d6770fc1c7e75fb458216d771a7b273);
+            
+    
+            var marker_3902e788d71f4858f3f810fb95b83ca4 = L.marker(
+                [-37.814345522392365, 144.9551179464378],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_410dcf625fb46226f1872b908e9ee723 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_493a8918f6a01dd42493ac7f0b030eca = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ceffc3bbe8e788ab5beef8d999dbbe1e = $(`<div id="html_ceffc3bbe8e788ab5beef8d999dbbe1e" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 1 - Lonsdale Street (Opposite 581 Lonsdale Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_493a8918f6a01dd42493ac7f0b030eca.setContent(html_ceffc3bbe8e788ab5beef8d999dbbe1e);
+            
+        
+
+        marker_3902e788d71f4858f3f810fb95b83ca4.bindPopup(popup_493a8918f6a01dd42493ac7f0b030eca)
+        ;
+
+        
+    
+    
+                marker_3902e788d71f4858f3f810fb95b83ca4.setIcon(icon_410dcf625fb46226f1872b908e9ee723);
+            
+    
+            var marker_5e913868b6c00b387c1745a708271c8a = L.marker(
+                [-37.80625893301874, 144.9692027022002],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_5c0b80ca0e9da2d831715798138e71b4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d15906d7976b4da9fd76289cb92082e1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8d828fdfc3d5ff739cfe6436189525af = $(`<div id="html_8d828fdfc3d5ff739cfe6436189525af" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 145 - Carlton Gardens South (Opposite 39 Rathdowne Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_d15906d7976b4da9fd76289cb92082e1.setContent(html_8d828fdfc3d5ff739cfe6436189525af);
+            
+        
+
+        marker_5e913868b6c00b387c1745a708271c8a.bindPopup(popup_d15906d7976b4da9fd76289cb92082e1)
+        ;
+
+        
+    
+    
+                marker_5e913868b6c00b387c1745a708271c8a.setIcon(icon_5c0b80ca0e9da2d831715798138e71b4);
+            
+    
+            var marker_a6d8b0687f614dc75d2415ca6f235aef = L.marker(
+                [-37.80894206847336, 144.9656488455227],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_3f3538105ca40a928d34eba5b521aef1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_deaf151033678fca84430242b4d250da = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8cd23c1f0e8b3220c89156bf6a6bb78b = $(`<div id="html_8cd23c1f0e8b3220c89156bf6a6bb78b" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 7 - Latrobe Street (Adjacent 120 La Trobe Street)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_deaf151033678fca84430242b4d250da.setContent(html_8cd23c1f0e8b3220c89156bf6a6bb78b);
+            
+        
+
+        marker_a6d8b0687f614dc75d2415ca6f235aef.bindPopup(popup_deaf151033678fca84430242b4d250da)
+        ;
+
+        
+    
+    
+                marker_a6d8b0687f614dc75d2415ca6f235aef.setIcon(icon_3f3538105ca40a928d34eba5b521aef1);
+            
+    
+            var marker_58b1e8831027252235f7b6f77e804b35 = L.marker(
+                [-37.80264555498511, 144.96982128721504],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_3bdc95a31c98b8c48864be5510d453ec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee67eb10d2fd085d10207d9810d5875e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f53740a5c04698a0650f30ea4d4640b4 = $(`<div id="html_f53740a5c04698a0650f30ea4d4640b4" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 138 - Carlton Gardens North (Opposite 199 Rathdowne Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_ee67eb10d2fd085d10207d9810d5875e.setContent(html_f53740a5c04698a0650f30ea4d4640b4);
+            
+        
+
+        marker_58b1e8831027252235f7b6f77e804b35.bindPopup(popup_ee67eb10d2fd085d10207d9810d5875e)
+        ;
+
+        
+    
+    
+                marker_58b1e8831027252235f7b6f77e804b35.setIcon(icon_3bdc95a31c98b8c48864be5510d453ec);
+            
+    
+            var marker_bfcc699ffe5fe9e276d4f2a784876dc4 = L.marker(
+                [-37.81722059052804, 144.93400271183998],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_060e25a9fe4f023fec907ba6d0f59ba5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "question",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_056840a16f4df7680fb8a0fd3ac9760c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_56843d6a61b1e2a9a627925355fd2e3e = $(`<div id="html_56843d6a61b1e2a9a627925355fd2e3e" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Ron Barassi Senior Park Pavilion</b><br>     Female: unknown<br>     Male: unknown<br>     Wheelchair: unknown<br>     Baby Facilities: unknown<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_056840a16f4df7680fb8a0fd3ac9760c.setContent(html_56843d6a61b1e2a9a627925355fd2e3e);
+            
+        
+
+        marker_bfcc699ffe5fe9e276d4f2a784876dc4.bindPopup(popup_056840a16f4df7680fb8a0fd3ac9760c)
+        ;
+
+        
+    
+    
+                marker_bfcc699ffe5fe9e276d4f2a784876dc4.setIcon(icon_060e25a9fe4f023fec907ba6d0f59ba5);
+            
+    
+            var marker_b702315b2f8560346d222541a84aea32 = L.marker(
+                [-37.8203552728411, 144.9733129088743],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_58eb651c7be14bc10c687c5148279210 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d2c6e4bddf60f12c9f27b427fdf3d59 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d133724fa128db0da9b6ebabf19a8c66 = $(`<div id="html_d133724fa128db0da9b6ebabf19a8c66" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 112 - Alexandra Gardens (Riverslide Skate Park)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_9d2c6e4bddf60f12c9f27b427fdf3d59.setContent(html_d133724fa128db0da9b6ebabf19a8c66);
+            
+        
+
+        marker_b702315b2f8560346d222541a84aea32.bindPopup(popup_9d2c6e4bddf60f12c9f27b427fdf3d59)
+        ;
+
+        
+    
+    
+                marker_b702315b2f8560346d222541a84aea32.setIcon(icon_58eb651c7be14bc10c687c5148279210);
+            
+    
+            var marker_e1257a576e267024d3e4266ec8a95726 = L.marker(
+                [-37.80271182455448, 144.96226812695767],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_d2404cf5e282090a367e29dc2f3fe13b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a8770c074c2f551a4ea5216148711c98 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2455079790bb1a5dfc86060a04a283bb = $(`<div id="html_2455079790bb1a5dfc86060a04a283bb" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 179 - Lincoln Square (138-142 Bouverie Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_a8770c074c2f551a4ea5216148711c98.setContent(html_2455079790bb1a5dfc86060a04a283bb);
+            
+        
+
+        marker_e1257a576e267024d3e4266ec8a95726.bindPopup(popup_a8770c074c2f551a4ea5216148711c98)
+        ;
+
+        
+    
+    
+                marker_e1257a576e267024d3e4266ec8a95726.setIcon(icon_d2404cf5e282090a367e29dc2f3fe13b);
+            
+    
+            var marker_b201332932b27ef80256b65d50acdd59 = L.marker(
+                [-37.819795975740334, 144.93766540530564],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_99487bdb03ee3065b39a5120021025b0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f56aabb97589334869b13691323180b2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e05e0227a2df7e0cddea43cc338a11b = $(`<div id="html_4e05e0227a2df7e0cddea43cc338a11b" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Victoria Harbour, Shed 3 (North Wharf Road)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_f56aabb97589334869b13691323180b2.setContent(html_4e05e0227a2df7e0cddea43cc338a11b);
+            
+        
+
+        marker_b201332932b27ef80256b65d50acdd59.bindPopup(popup_f56aabb97589334869b13691323180b2)
+        ;
+
+        
+    
+    
+                marker_b201332932b27ef80256b65d50acdd59.setIcon(icon_99487bdb03ee3065b39a5120021025b0);
+            
+    
+            var marker_2b89d7a34ef9686aa304a1ba9d9b02d8 = L.marker(
+                [-37.815278082082735, 144.97758877995486],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_3a382f2c5e7b808f1f5d2538a795b0b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7ab5984f669695f79ace13669d8372f3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_493a91d3643ab9af56ae3518e1f79342 = $(`<div id="html_493a91d3643ab9af56ae3518e1f79342" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 118 - Fitzroy Gardens (2 Lansdowne Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_7ab5984f669695f79ace13669d8372f3.setContent(html_493a91d3643ab9af56ae3518e1f79342);
+            
+        
+
+        marker_2b89d7a34ef9686aa304a1ba9d9b02d8.bindPopup(popup_7ab5984f669695f79ace13669d8372f3)
+        ;
+
+        
+    
+    
+                marker_2b89d7a34ef9686aa304a1ba9d9b02d8.setIcon(icon_3a382f2c5e7b808f1f5d2538a795b0b1);
+            
+    
+            var marker_c7b3396d5c7260491006ee7f536ef5c5 = L.marker(
+                [-37.8082334704767, 144.9601868749377],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_f1110236390c9b5feb6c1ee5de11581c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3bea729f157ad98dc603c38ab14a47c6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_761553a235d41633f14bd6c427d7d7f9 = $(`<div id="html_761553a235d41633f14bd6c427d7d7f9" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 34 - Franklin Street (Opposite 80 Franklin Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_3bea729f157ad98dc603c38ab14a47c6.setContent(html_761553a235d41633f14bd6c427d7d7f9);
+            
+        
+
+        marker_c7b3396d5c7260491006ee7f536ef5c5.bindPopup(popup_3bea729f157ad98dc603c38ab14a47c6)
+        ;
+
+        
+    
+    
+                marker_c7b3396d5c7260491006ee7f536ef5c5.setIcon(icon_f1110236390c9b5feb6c1ee5de11581c);
+            
+    
+            var marker_bb83e3743ab426b4590c329a2e4a0ee9 = L.marker(
+                [-37.79870959701599, 144.9675938800973],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_ea4a44edd210d70338b4a2f2f7c13780 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f8ed82f4d1273502563051157314b2a0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4eba37436e564e677766e547f1fffed9 = $(`<div id="html_4eba37436e564e677766e547f1fffed9" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 137 - Faraday Street (Opposite 208-212 Faraday Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_f8ed82f4d1273502563051157314b2a0.setContent(html_4eba37436e564e677766e547f1fffed9);
+            
+        
+
+        marker_bb83e3743ab426b4590c329a2e4a0ee9.bindPopup(popup_f8ed82f4d1273502563051157314b2a0)
+        ;
+
+        
+    
+    
+                marker_bb83e3743ab426b4590c329a2e4a0ee9.setIcon(icon_ea4a44edd210d70338b4a2f2f7c13780);
+            
+    
+            var marker_d35d51a617fb7748ec6dd381db296ac8 = L.marker(
+                [-37.83393826633729, 144.9817840463506],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_fce95036a66cf7b2f7ee3f84c77e5a82 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12a81aa9a9c834178ce0608fd538bf6a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_12bbca4ab192b0866c26ca4ae31bf954 = $(`<div id="html_12bbca4ab192b0866c26ca4ae31bf954" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 103 - Kings Domain South (Opposite 169 Domain Road)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_12a81aa9a9c834178ce0608fd538bf6a.setContent(html_12bbca4ab192b0866c26ca4ae31bf954);
+            
+        
+
+        marker_d35d51a617fb7748ec6dd381db296ac8.bindPopup(popup_12a81aa9a9c834178ce0608fd538bf6a)
+        ;
+
+        
+    
+    
+                marker_d35d51a617fb7748ec6dd381db296ac8.setIcon(icon_fce95036a66cf7b2f7ee3f84c77e5a82);
+            
+    
+            var marker_05bffa126c354937d19265c43372f439 = L.marker(
+                [-37.8039946349673, 144.95909066756946],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_9cf3c1b932a427dcaf8870bac5e7dece = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d1f1f0125f8b3ce3f8b15c01c4f6317d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_001083382556413405d0b7fa6b442692 = $(`<div id="html_001083382556413405d0b7fa6b442692" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 140 - Queensberry Street (Opposite 286 Queensberry Street)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_d1f1f0125f8b3ce3f8b15c01c4f6317d.setContent(html_001083382556413405d0b7fa6b442692);
+            
+        
+
+        marker_05bffa126c354937d19265c43372f439.bindPopup(popup_d1f1f0125f8b3ce3f8b15c01c4f6317d)
+        ;
+
+        
+    
+    
+                marker_05bffa126c354937d19265c43372f439.setIcon(icon_9cf3c1b932a427dcaf8870bac5e7dece);
+            
+    
+            var marker_abb72f3cde098211ac55e7c022a989e3 = L.marker(
+                [-37.82691574923448, 144.9746477838788],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_8838bc4f3bed9c3faab597e89a197d3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_01840f50c64389a99f6151c2baa9e1f9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d5ed1de838919cb47e8c821f8b85193e = $(`<div id="html_d5ed1de838919cb47e8c821f8b85193e" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 106 - Kings Domain Government House Drive</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_01840f50c64389a99f6151c2baa9e1f9.setContent(html_d5ed1de838919cb47e8c821f8b85193e);
+            
+        
+
+        marker_abb72f3cde098211ac55e7c022a989e3.bindPopup(popup_01840f50c64389a99f6151c2baa9e1f9)
+        ;
+
+        
+    
+    
+                marker_abb72f3cde098211ac55e7c022a989e3.setIcon(icon_8838bc4f3bed9c3faab597e89a197d3d);
+            
+    
+            var marker_5cfae14a8ef118140816a7c9b4afcfa4 = L.marker(
+                [-37.81435831108069, 144.94168216712015],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_2523db89ce480d84abf392d710aa086a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee13667421f2f8ce067d82203388584c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ecaf15ac3a6ebd3a23a9dcacb3743048 = $(`<div id="html_ecaf15ac3a6ebd3a23a9dcacb3743048" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Saint Mangos Lane, The Palladio (New Quay)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_ee13667421f2f8ce067d82203388584c.setContent(html_ecaf15ac3a6ebd3a23a9dcacb3743048);
+            
+        
+
+        marker_5cfae14a8ef118140816a7c9b4afcfa4.bindPopup(popup_ee13667421f2f8ce067d82203388584c)
+        ;
+
+        
+    
+    
+                marker_5cfae14a8ef118140816a7c9b4afcfa4.setIcon(icon_2523db89ce480d84abf392d710aa086a);
+            
+    
+            var marker_751cf59d35e8d9f7c3eae32706fd278f = L.marker(
+                [-37.78187131786685, 144.95614252894822],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_de360c0e27a5b36370435ba796eecd87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_76c9d9598933b7b9c1021e7266ce2926 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a1c104fd98c96f59f9db95547a7e372b = $(`<div id="html_a1c104fd98c96f59f9db95547a7e372b" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Royal Park Golf Course Club House</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_76c9d9598933b7b9c1021e7266ce2926.setContent(html_a1c104fd98c96f59f9db95547a7e372b);
+            
+        
+
+        marker_751cf59d35e8d9f7c3eae32706fd278f.bindPopup(popup_76c9d9598933b7b9c1021e7266ce2926)
+        ;
+
+        
+    
+    
+                marker_751cf59d35e8d9f7c3eae32706fd278f.setIcon(icon_de360c0e27a5b36370435ba796eecd87);
+            
+    
+            var marker_24a5f0bacb6ca8650b177b20a2651da2 = L.marker(
+                [-37.78848882114304, 144.9235637219743],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_7f98411e7aea7198c21b18cfaf5cd66f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_257dff3cb8d86ba75eb7c00ba518360b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_21135d030ab585532f4c16c3b8c0e98e = $(`<div id="html_21135d030ab585532f4c16c3b8c0e98e" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Newmarket Reserve (26 Smithfield Road)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_257dff3cb8d86ba75eb7c00ba518360b.setContent(html_21135d030ab585532f4c16c3b8c0e98e);
+            
+        
+
+        marker_24a5f0bacb6ca8650b177b20a2651da2.bindPopup(popup_257dff3cb8d86ba75eb7c00ba518360b)
+        ;
+
+        
+    
+    
+                marker_24a5f0bacb6ca8650b177b20a2651da2.setIcon(icon_7f98411e7aea7198c21b18cfaf5cd66f);
+            
+    
+            var marker_790af18fc2becdef98aa40d2c3afc86f = L.marker(
+                [-37.84001779326322, 144.98122701462214],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_d7203cf04cc81875accae584c2bfd7a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eb91b5e48a74e8411501d82c505210aa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9d2456807893440be9c921bf8bf2fee7 = $(`<div id="html_9d2456807893440be9c921bf8bf2fee7" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 102 - Fawkner Park, North Pavilion (Female)</b><br>     Female: yes<br>     Male: no<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_eb91b5e48a74e8411501d82c505210aa.setContent(html_9d2456807893440be9c921bf8bf2fee7);
+            
+        
+
+        marker_790af18fc2becdef98aa40d2c3afc86f.bindPopup(popup_eb91b5e48a74e8411501d82c505210aa)
+        ;
+
+        
+    
+    
+                marker_790af18fc2becdef98aa40d2c3afc86f.setIcon(icon_d7203cf04cc81875accae584c2bfd7a4);
+            
+    
+            var marker_d1b360b6bcda4a477d98f3df83c9de85 = L.marker(
+                [-37.78303248417686, 144.94185635299425],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_d78139e7da0c040a0d54bf0c4ad35fe9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ddda5220197102a99a9faf9964204874 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_188be47164ac57bb8e72a24969e6f015 = $(`<div id="html_188be47164ac57bb8e72a24969e6f015" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 120 - Royal Park, Wetland (off Oak Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_ddda5220197102a99a9faf9964204874.setContent(html_188be47164ac57bb8e72a24969e6f015);
+            
+        
+
+        marker_d1b360b6bcda4a477d98f3df83c9de85.bindPopup(popup_ddda5220197102a99a9faf9964204874)
+        ;
+
+        
+    
+    
+                marker_d1b360b6bcda4a477d98f3df83c9de85.setIcon(icon_d78139e7da0c040a0d54bf0c4ad35fe9);
+            
+    
+            var marker_188b06fc4214c0188da4baf5f8e4c0b0 = L.marker(
+                [-37.82034212858627, 144.96421972799456],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_1c22800c1de7c49750881c67c839e61b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_597a0868a265173ee3707ae145fc0c71 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ba100f74effa76d9ba871f0038884c7a = $(`<div id="html_ba100f74effa76d9ba871f0038884c7a" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 172 - Southbank Promenade (opposite Esso House)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_597a0868a265173ee3707ae145fc0c71.setContent(html_ba100f74effa76d9ba871f0038884c7a);
+            
+        
+
+        marker_188b06fc4214c0188da4baf5f8e4c0b0.bindPopup(popup_597a0868a265173ee3707ae145fc0c71)
+        ;
+
+        
+    
+    
+                marker_188b06fc4214c0188da4baf5f8e4c0b0.setIcon(icon_1c22800c1de7c49750881c67c839e61b);
+            
+    
+            var marker_45a3d969f582133a9265853088d81b97 = L.marker(
+                [-37.82289159858857, 144.975280957334],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_39088f86864c912187a4d1b2f9df9757 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f720cb2acb0d6412db38a11c48cc8106 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a2d9821da7c0ca6f952534f2c539b666 = $(`<div id="html_a2d9821da7c0ca6f952534f2c539b666" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 109 - Kings Domain Myer Music Bowl Rear of</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: yes<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_f720cb2acb0d6412db38a11c48cc8106.setContent(html_a2d9821da7c0ca6f952534f2c539b666);
+            
+        
+
+        marker_45a3d969f582133a9265853088d81b97.bindPopup(popup_f720cb2acb0d6412db38a11c48cc8106)
+        ;
+
+        
+    
+    
+                marker_45a3d969f582133a9265853088d81b97.setIcon(icon_39088f86864c912187a4d1b2f9df9757);
+            
+    
+            var marker_a1d79f2b2a143f149dd08593f37889f7 = L.marker(
+                [-37.81224077558713, 144.97392555886628],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_1cce5dd46663a7d7ee02a016020aefec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ca121d9b16eb49c8bf100a89c000148a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_20b747dce36505ac48fc2780c3d6348c = $(`<div id="html_20b747dce36505ac48fc2780c3d6348c" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 125 - Gordon Reserve (74-108 Spring Street)</b><br>     Female: yes<br>     Male: no<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_ca121d9b16eb49c8bf100a89c000148a.setContent(html_20b747dce36505ac48fc2780c3d6348c);
+            
+        
+
+        marker_a1d79f2b2a143f149dd08593f37889f7.bindPopup(popup_ca121d9b16eb49c8bf100a89c000148a)
+        ;
+
+        
+    
+    
+                marker_a1d79f2b2a143f149dd08593f37889f7.setIcon(icon_1cce5dd46663a7d7ee02a016020aefec);
+            
+    
+            var marker_7f7caff24a531e84026112538d77d03c = L.marker(
+                [-37.81203615704364, 144.98307493665166],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_f8dd367ccbb475d790df3dd10da6a64e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73e9fd904d3944770579ff63e8e104c9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8af03274deb5709da79f57dce166837a = $(`<div id="html_8af03274deb5709da79f57dce166837a" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 119 - Fitzroy Gardens Toilets (150 Clarendon Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_73e9fd904d3944770579ff63e8e104c9.setContent(html_8af03274deb5709da79f57dce166837a);
+            
+        
+
+        marker_7f7caff24a531e84026112538d77d03c.bindPopup(popup_73e9fd904d3944770579ff63e8e104c9)
+        ;
+
+        
+    
+    
+                marker_7f7caff24a531e84026112538d77d03c.setIcon(icon_f8dd367ccbb475d790df3dd10da6a64e);
+            
+    
+            var marker_2c3b86a1c6dc91f569971a6efb49e9e5 = L.marker(
+                [-37.80612149907781, 144.95653844268273],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_6e9b1c120616ba31a0fb5b23b248cba6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f97e069d665601a2e1049091751e689 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_686cd5cbddefe9082c6ab0a36a59f028 = $(`<div id="html_686cd5cbddefe9082c6ab0a36a59f028" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Queen Victoria Market (153 Victoria Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_0f97e069d665601a2e1049091751e689.setContent(html_686cd5cbddefe9082c6ab0a36a59f028);
+            
+        
+
+        marker_2c3b86a1c6dc91f569971a6efb49e9e5.bindPopup(popup_0f97e069d665601a2e1049091751e689)
+        ;
+
+        
+    
+    
+                marker_2c3b86a1c6dc91f569971a6efb49e9e5.setIcon(icon_6e9b1c120616ba31a0fb5b23b248cba6);
+            
+    
+            var marker_2151391d00751de732c8cb9d90c339f6 = L.marker(
+                [-37.80637961897052, 144.95905779158946],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_ed62a8877ebbf0f184d8cfb93172b0d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b8e81fafd02674cb9b653d7a1e034eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2bd170489a4b6539c88290bc73514974 = $(`<div id="html_2bd170489a4b6539c88290bc73514974" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Queen Victoria Market (Food Court - 65-81 Victoria Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_0b8e81fafd02674cb9b653d7a1e034eb.setContent(html_2bd170489a4b6539c88290bc73514974);
+            
+        
+
+        marker_2151391d00751de732c8cb9d90c339f6.bindPopup(popup_0b8e81fafd02674cb9b653d7a1e034eb)
+        ;
+
+        
+    
+    
+                marker_2151391d00751de732c8cb9d90c339f6.setIcon(icon_ed62a8877ebbf0f184d8cfb93172b0d4);
+            
+    
+            var marker_6963e439c4c8ccfe1f78d88264410116 = L.marker(
+                [-37.815838165017645, 144.9610620730027],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_6e208eef3049d8b7b16f6fb4ca8040ff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2cc18776852f8008032dd99f522fb2b4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2b6a743b0b2200bdd53b3d31309fe4a6 = $(`<div id="html_2b6a743b0b2200bdd53b3d31309fe4a6" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 43 - Queen Street (opposite 113 Queen Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_2cc18776852f8008032dd99f522fb2b4.setContent(html_2b6a743b0b2200bdd53b3d31309fe4a6);
+            
+        
+
+        marker_6963e439c4c8ccfe1f78d88264410116.bindPopup(popup_2cc18776852f8008032dd99f522fb2b4)
+        ;
+
+        
+    
+    
+                marker_6963e439c4c8ccfe1f78d88264410116.setIcon(icon_6e208eef3049d8b7b16f6fb4ca8040ff);
+            
+    
+            var marker_76f12e42ee61d77f3dcddb316a0bc683 = L.marker(
+                [-37.7855983874526, 144.9630353603256],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_9d23ef46339f35e634f3fd9e4b0e9de2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8335894821283868fccf3d87ea09458a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ccbf9b19a7f94967ff7b0f97646880d3 = $(`<div id="html_ccbf9b19a7f94967ff7b0f97646880d3" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 128 - Princes Park South Playground (Princes Park Drive)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_8335894821283868fccf3d87ea09458a.setContent(html_ccbf9b19a7f94967ff7b0f97646880d3);
+            
+        
+
+        marker_76f12e42ee61d77f3dcddb316a0bc683.bindPopup(popup_8335894821283868fccf3d87ea09458a)
+        ;
+
+        
+    
+    
+                marker_76f12e42ee61d77f3dcddb316a0bc683.setIcon(icon_9d23ef46339f35e634f3fd9e4b0e9de2);
+            
+    
+            var marker_7f665b40802533f02f8f3b76c31e7d26 = L.marker(
+                [-37.79373229128235, 144.9303518616331],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_7d945e2c15a56ab74f8dc951255d4019 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1dcdfdd7baa4017a36c2bcede03cde43 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_361631ae39b7f86c8022e93a8014161c = $(`<div id="html_361631ae39b7f86c8022e93a8014161c" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 177 - Bellair Street (Opposite 180 Bellair Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_1dcdfdd7baa4017a36c2bcede03cde43.setContent(html_361631ae39b7f86c8022e93a8014161c);
+            
+        
+
+        marker_7f665b40802533f02f8f3b76c31e7d26.bindPopup(popup_1dcdfdd7baa4017a36c2bcede03cde43)
+        ;
+
+        
+    
+    
+                marker_7f665b40802533f02f8f3b76c31e7d26.setIcon(icon_7d945e2c15a56ab74f8dc951255d4019);
+            
+    
+            var marker_872b86362289d4be286ef014c003712c = L.marker(
+                [-37.81521576619692, 144.96694328510318],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_d4a899b34e192e4d40bfaee8ee34fae9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fe29581e73193f07ffba6e3b8bffb1ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_121229b7c7e06b786a10eb991ee86f96 = $(`<div id="html_121229b7c7e06b786a10eb991ee86f96" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Town Hall Melbourne (200 Collins Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: yes<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_fe29581e73193f07ffba6e3b8bffb1ef.setContent(html_121229b7c7e06b786a10eb991ee86f96);
+            
+        
+
+        marker_872b86362289d4be286ef014c003712c.bindPopup(popup_fe29581e73193f07ffba6e3b8bffb1ef)
+        ;
+
+        
+    
+    
+                marker_872b86362289d4be286ef014c003712c.setIcon(icon_d4a899b34e192e4d40bfaee8ee34fae9);
+            
+    
+            var marker_b15ff8d45a93d5162c949c33fda754c2 = L.marker(
+                [-37.830132537548096, 144.96501222835187],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_fb8b363c1882fe411e498d868e996b26 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1a584bd8352c558b1fab55b6707fabb7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ca86921b89dd82327656afa2ddc6540d = $(`<div id="html_ca86921b89dd82327656afa2ddc6540d" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 105 -Sturt Street Reserve (280 Sturt Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_1a584bd8352c558b1fab55b6707fabb7.setContent(html_ca86921b89dd82327656afa2ddc6540d);
+            
+        
+
+        marker_b15ff8d45a93d5162c949c33fda754c2.bindPopup(popup_1a584bd8352c558b1fab55b6707fabb7)
+        ;
+
+        
+    
+    
+                marker_b15ff8d45a93d5162c949c33fda754c2.setIcon(icon_fb8b363c1882fe411e498d868e996b26);
+            
+    
+            var marker_717d717eba6cf42eb9452af26f859c6d = L.marker(
+                [-37.81384641664995, 144.9713740947211],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_8351af1a5c6ed96b5218d9efdeb704f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc24492aa4ea894f8a51b125ae07c35c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1efc7cddc13e75e27e676175f6d2e43e = $(`<div id="html_1efc7cddc13e75e27e676175f6d2e43e" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 13 - Exhibition Street (Opposite 77 Exhibition Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_bc24492aa4ea894f8a51b125ae07c35c.setContent(html_1efc7cddc13e75e27e676175f6d2e43e);
+            
+        
+
+        marker_717d717eba6cf42eb9452af26f859c6d.bindPopup(popup_bc24492aa4ea894f8a51b125ae07c35c)
+        ;
+
+        
+    
+    
+                marker_717d717eba6cf42eb9452af26f859c6d.setIcon(icon_8351af1a5c6ed96b5218d9efdeb704f5);
+            
+    
+            var marker_c5d2679174bf126ecf9bdd684246fef2 = L.marker(
+                [-37.80680576738025, 144.96264850030644],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_126f3378e976a7aec0c9a3a617a6188c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e677eed23d6fd5ca1429e3211f59f0f2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f7eb9e98102a66c13bd86902604b7c10 = $(`<div id="html_f7eb9e98102a66c13bd86902604b7c10" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 146 - Swanston Street (Opposite 475-511 Swanston Street)</b><br>     Female: yes<br>     Male: no<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_e677eed23d6fd5ca1429e3211f59f0f2.setContent(html_f7eb9e98102a66c13bd86902604b7c10);
+            
+        
+
+        marker_c5d2679174bf126ecf9bdd684246fef2.bindPopup(popup_e677eed23d6fd5ca1429e3211f59f0f2)
+        ;
+
+        
+    
+    
+                marker_c5d2679174bf126ecf9bdd684246fef2.setIcon(icon_126f3378e976a7aec0c9a3a617a6188c);
+            
+    
+            var marker_ba58c812a82320be5e4481f35764ad19 = L.marker(
+                [-37.81094232809633, 144.98685873937842],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_5ed9f9ae174a35d3a06e6669a672bc63 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b6a108eacf0019657556d1deace97b09 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2a33e379dccd922083b76acfffa7680e = $(`<div id="html_2a33e379dccd922083b76acfffa7680e" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 117 - Powlett Reserve (Opposite 128 Albert Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_b6a108eacf0019657556d1deace97b09.setContent(html_2a33e379dccd922083b76acfffa7680e);
+            
+        
+
+        marker_ba58c812a82320be5e4481f35764ad19.bindPopup(popup_b6a108eacf0019657556d1deace97b09)
+        ;
+
+        
+    
+    
+                marker_ba58c812a82320be5e4481f35764ad19.setIcon(icon_5ed9f9ae174a35d3a06e6669a672bc63);
+            
+    
+            var marker_95aed0f4ee7653b2f25162fdad094fc7 = L.marker(
+                [-37.82175860330799, 144.94738341867807],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_ee41043e9aa6d055caed2626aa449df7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b9c694fd9b81dc7b946176cd4b50f663 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_449bcf0b0f5eea961be8dc330b7b7999 = $(`<div id="html_449bcf0b0f5eea961be8dc330b7b7999" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 182 - Docklands Park South - 25 Harbour Esplanade</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: yes<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_b9c694fd9b81dc7b946176cd4b50f663.setContent(html_449bcf0b0f5eea961be8dc330b7b7999);
+            
+        
+
+        marker_95aed0f4ee7653b2f25162fdad094fc7.bindPopup(popup_b9c694fd9b81dc7b946176cd4b50f663)
+        ;
+
+        
+    
+    
+                marker_95aed0f4ee7653b2f25162fdad094fc7.setIcon(icon_ee41043e9aa6d055caed2626aa449df7);
+            
+    
+            var marker_2a4dc1aad55167ba1c998da24b4e5ee4 = L.marker(
+                [-37.79251146448698, 144.95685172084129],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_622105320196b35d16305cc9b7a5615f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b5c3f43fabc2d1c07af3b0ecc5053f60 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_25c0c348686509966b0b4a430a7827d2 = $(`<div id="html_25c0c348686509966b0b4a430a7827d2" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 100 - Royal Park - Native Garden (off Gatehouse Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_b5c3f43fabc2d1c07af3b0ecc5053f60.setContent(html_25c0c348686509966b0b4a430a7827d2);
+            
+        
+
+        marker_2a4dc1aad55167ba1c998da24b4e5ee4.bindPopup(popup_b5c3f43fabc2d1c07af3b0ecc5053f60)
+        ;
+
+        
+    
+    
+                marker_2a4dc1aad55167ba1c998da24b4e5ee4.setIcon(icon_622105320196b35d16305cc9b7a5615f);
+            
+    
+            var marker_b934bcee76501b9a602fc05c49e35967 = L.marker(
+                [-37.80945202894246, 144.97307695563703],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_9697756503aa3fe6e077186e51082bb8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12f00cd17895c0fcb4eb0cf5d3d9100a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dbcda72832394e7375d2dea35dbce35a = $(`<div id="html_dbcda72832394e7375d2dea35dbce35a" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 124 - Nicholson Street (1A Nicholson Street)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_12f00cd17895c0fcb4eb0cf5d3d9100a.setContent(html_dbcda72832394e7375d2dea35dbce35a);
+            
+        
+
+        marker_b934bcee76501b9a602fc05c49e35967.bindPopup(popup_12f00cd17895c0fcb4eb0cf5d3d9100a)
+        ;
+
+        
+    
+    
+                marker_b934bcee76501b9a602fc05c49e35967.setIcon(icon_9697756503aa3fe6e077186e51082bb8);
+            
+    
+            var marker_4fb022e1723a029d8f1de4f29384b6c7 = L.marker(
+                [-37.790174410412384, 144.94366905096865],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_fef0337d7f407d6b8c98771fa4b31353 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6204686d1f6b0975002f8c40392d2cf0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b8bcca1f83dd250ac4fc8b87ed165804 = $(`<div id="html_b8bcca1f83dd250ac4fc8b87ed165804" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 131 - Royal Park (Flemington Rd - Near North Park Tennis Club)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_6204686d1f6b0975002f8c40392d2cf0.setContent(html_b8bcca1f83dd250ac4fc8b87ed165804);
+            
+        
+
+        marker_4fb022e1723a029d8f1de4f29384b6c7.bindPopup(popup_6204686d1f6b0975002f8c40392d2cf0)
+        ;
+
+        
+    
+    
+                marker_4fb022e1723a029d8f1de4f29384b6c7.setIcon(icon_fef0337d7f407d6b8c98771fa4b31353);
+            
+    
+            var marker_704aba65bac1dd3383a926e78332b5a0 = L.marker(
+                [-37.80307786641225, 144.94986517956968],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_63918ff9fe19b24ef361f07446db063f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d704ff696bf615871e8674aace949712 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_30aa6d78cb14a78682d807415c46aed6 = $(`<div id="html_30aa6d78cb14a78682d807415c46aed6" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 170 - Queensberry Street (Opposite 530 Queensberry Street)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_d704ff696bf615871e8674aace949712.setContent(html_30aa6d78cb14a78682d807415c46aed6);
+            
+        
+
+        marker_704aba65bac1dd3383a926e78332b5a0.bindPopup(popup_d704ff696bf615871e8674aace949712)
+        ;
+
+        
+    
+    
+                marker_704aba65bac1dd3383a926e78332b5a0.setIcon(icon_63918ff9fe19b24ef361f07446db063f);
+            
+    
+            var marker_500156c2648241fe746090c1f6f05906 = L.marker(
+                [-37.81324543360198, 144.9668965896814],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_0481f1f883a0f375646c390a1b9902cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3dbad6b970a94ec92ae74ba1593743f6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1cecf458cb5eb074688cfff7d6c26f42 = $(`<div id="html_1cecf458cb5eb074688cfff7d6c26f42" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 46 - Bourke Street (opposite 225 Bourke Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_3dbad6b970a94ec92ae74ba1593743f6.setContent(html_1cecf458cb5eb074688cfff7d6c26f42);
+            
+        
+
+        marker_500156c2648241fe746090c1f6f05906.bindPopup(popup_3dbad6b970a94ec92ae74ba1593743f6)
+        ;
+
+        
+    
+    
+                marker_500156c2648241fe746090c1f6f05906.setIcon(icon_0481f1f883a0f375646c390a1b9902cf);
+            
+    
+            var marker_985768a867668b6bdedb929ac8b4d784 = L.marker(
+                [-37.80891324235132, 144.95504018635694],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_bfc8557968a897900f5ce73d4e469b2b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13871de736f6de6da55138d751e6a3a1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_42e8442bb1bbec2903515bf8d4ed651f = $(`<div id="html_42e8442bb1bbec2903515bf8d4ed651f" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 154 - Flagstaff Gardens (cnr William & Dudley)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_13871de736f6de6da55138d751e6a3a1.setContent(html_42e8442bb1bbec2903515bf8d4ed651f);
+            
+        
+
+        marker_985768a867668b6bdedb929ac8b4d784.bindPopup(popup_13871de736f6de6da55138d751e6a3a1)
+        ;
+
+        
+    
+    
+                marker_985768a867668b6bdedb929ac8b4d784.setIcon(icon_bfc8557968a897900f5ce73d4e469b2b);
+            
+    
+            var marker_0c98070818b51cca4b5e4571d2335b81 = L.marker(
+                [-37.81598982599987, 144.97279836576897],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_4bab0d680978fa42aa5678130c95a369 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a0bdebb5fa406d93ae88f3f5dc88a40 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e8f19fea25969050999246ac35e71b5d = $(`<div id="html_e8f19fea25969050999246ac35e71b5d" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 14 - Flinders Street (27 Flinders Street)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_4a0bdebb5fa406d93ae88f3f5dc88a40.setContent(html_e8f19fea25969050999246ac35e71b5d);
+            
+        
+
+        marker_0c98070818b51cca4b5e4571d2335b81.bindPopup(popup_4a0bdebb5fa406d93ae88f3f5dc88a40)
+        ;
+
+        
+    
+    
+                marker_0c98070818b51cca4b5e4571d2335b81.setIcon(icon_4bab0d680978fa42aa5678130c95a369);
+            
+    
+            var marker_950b66fa50dfcb63ce9679b6bd3b2158 = L.marker(
+                [-37.821720681669966, 144.95557809313962],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_30dcdffd9ef35a20676d6b12b76fb7a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1e23135bfed448b04ed6087081141bdb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0fa2c1c86a90b644c78b7e27078e8e7 = $(`<div id="html_b0fa2c1c86a90b644c78b7e27078e8e7" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 169 - Batman Park (2A Spencer Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_1e23135bfed448b04ed6087081141bdb.setContent(html_b0fa2c1c86a90b644c78b7e27078e8e7);
+            
+        
+
+        marker_950b66fa50dfcb63ce9679b6bd3b2158.bindPopup(popup_1e23135bfed448b04ed6087081141bdb)
+        ;
+
+        
+    
+    
+                marker_950b66fa50dfcb63ce9679b6bd3b2158.setIcon(icon_30dcdffd9ef35a20676d6b12b76fb7a6);
+            
+    
+            var marker_258d36e4be1f5ddd20470f064e7610d4 = L.marker(
+                [-37.81343920794399, 144.96292272645067],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_29e143635d9c23dfb4449d2cf4205b01 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0bfe0d7bf6d9d38fc2b302f292790cf0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b80ae6d05f90ba3bc4ead13106fc9356 = $(`<div id="html_b80ae6d05f90ba3bc4ead13106fc9356" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 6 - Elizabeth Street (Toilet Adjacent 200 Elizabeth Street)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_0bfe0d7bf6d9d38fc2b302f292790cf0.setContent(html_b80ae6d05f90ba3bc4ead13106fc9356);
+            
+        
+
+        marker_258d36e4be1f5ddd20470f064e7610d4.bindPopup(popup_0bfe0d7bf6d9d38fc2b302f292790cf0)
+        ;
+
+        
+    
+    
+                marker_258d36e4be1f5ddd20470f064e7610d4.setIcon(icon_29e143635d9c23dfb4449d2cf4205b01);
+            
+    
+            var marker_46ea7ecccece92514da2ea082db42197 = L.marker(
+                [-37.79301167872576, 144.97399489761827],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_3c63d3f5784d4f429a7fea21881d467f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d0f9aecc4e2b3e9c794e02b65e0347a7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_810250473482417ba033afea25869d44 = $(`<div id="html_810250473482417ba033afea25869d44" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 133- Canning Street Reserve (49 Princes Street)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_d0f9aecc4e2b3e9c794e02b65e0347a7.setContent(html_810250473482417ba033afea25869d44);
+            
+        
+
+        marker_46ea7ecccece92514da2ea082db42197.bindPopup(popup_d0f9aecc4e2b3e9c794e02b65e0347a7)
+        ;
+
+        
+    
+    
+                marker_46ea7ecccece92514da2ea082db42197.setIcon(icon_3c63d3f5784d4f429a7fea21881d467f);
+            
+    
+            var marker_c9daa43983c3cd95a291c2075f1cf888 = L.marker(
+                [-37.840147692965054, 144.98138308753735],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_ea8cba09e367a8232ff8b635cde51050 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9cf41bf3d27206d1331680ca599585bc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6270fe9d3aaba213d4b5203bee37ff10 = $(`<div id="html_6270fe9d3aaba213d4b5203bee37ff10" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 102 - Fawkner Park, North Pavilion (Male)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_9cf41bf3d27206d1331680ca599585bc.setContent(html_6270fe9d3aaba213d4b5203bee37ff10);
+            
+        
+
+        marker_c9daa43983c3cd95a291c2075f1cf888.bindPopup(popup_9cf41bf3d27206d1331680ca599585bc)
+        ;
+
+        
+    
+    
+                marker_c9daa43983c3cd95a291c2075f1cf888.setIcon(icon_ea8cba09e367a8232ff8b635cde51050);
+            
+    
+            var marker_880fff342797b4ba5fba4a20ad62bd4f = L.marker(
+                [-37.8129330992456, 144.9600121469519],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_9d17a585ef28b9df7d5b4ce999be1254 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_633410935e2a15d1ca433605014ca911 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ad156ae71208d71548743efd9d2612de = $(`<div id="html_ad156ae71208d71548743efd9d2612de" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 36 - Lonsdale Street (Opposite 424 Lonsdale Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: unknown<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_633410935e2a15d1ca433605014ca911.setContent(html_ad156ae71208d71548743efd9d2612de);
+            
+        
+
+        marker_880fff342797b4ba5fba4a20ad62bd4f.bindPopup(popup_633410935e2a15d1ca433605014ca911)
+        ;
+
+        
+    
+    
+                marker_880fff342797b4ba5fba4a20ad62bd4f.setIcon(icon_9d17a585ef28b9df7d5b4ce999be1254);
+            
+    
+            var marker_47b1b27743e59e5f8cf5ae4edfad98c4 = L.marker(
+                [-37.821004779775386, 144.97593322373976],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_e64c46762b8d4c95c1bee26897fc79d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b6db97ea890fb3b32bbe8acda5acabeb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e88e9e28a633f255f2b0d7be37285be7 = $(`<div id="html_e88e9e28a633f255f2b0d7be37285be7" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 111 - Birrarung Marr Speakers Corner</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_b6db97ea890fb3b32bbe8acda5acabeb.setContent(html_e88e9e28a633f255f2b0d7be37285be7);
+            
+        
+
+        marker_47b1b27743e59e5f8cf5ae4edfad98c4.bindPopup(popup_b6db97ea890fb3b32bbe8acda5acabeb)
+        ;
+
+        
+    
+    
+                marker_47b1b27743e59e5f8cf5ae4edfad98c4.setIcon(icon_e64c46762b8d4c95c1bee26897fc79d0);
+            
+    
+            var marker_9ef4f1740a79c1ec895a8eaaaa1466ba = L.marker(
+                [-37.81859887229392, 144.97105956826817],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_5727a2899b8c064a113e7fac922ef63a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_69603eb06ba1e119afc873451cd7d885 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fdcc7e24c6135a08daeb5a3ce8716a64 = $(`<div id="html_fdcc7e24c6135a08daeb5a3ce8716a64" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 48 - Birrarung Marr (Opposite Artplay)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_69603eb06ba1e119afc873451cd7d885.setContent(html_fdcc7e24c6135a08daeb5a3ce8716a64);
+            
+        
+
+        marker_9ef4f1740a79c1ec895a8eaaaa1466ba.bindPopup(popup_69603eb06ba1e119afc873451cd7d885)
+        ;
+
+        
+    
+    
+                marker_9ef4f1740a79c1ec895a8eaaaa1466ba.setIcon(icon_5727a2899b8c064a113e7fac922ef63a);
+            
+    
+            var marker_cccb8b8189c1856edaa4cbc3bb082a72 = L.marker(
+                [-37.83084912404898, 144.97518226820782],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_5df1e10373b2bdf520ed01cdcd73a9f2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85a33e34317486a0b705cba84671a858 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f5b569828db808411f8393a9278201c5 = $(`<div id="html_f5b569828db808411f8393a9278201c5" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 104 - Kings Domain South (off Birdwood Avenue)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_85a33e34317486a0b705cba84671a858.setContent(html_f5b569828db808411f8393a9278201c5);
+            
+        
+
+        marker_cccb8b8189c1856edaa4cbc3bb082a72.bindPopup(popup_85a33e34317486a0b705cba84671a858)
+        ;
+
+        
+    
+    
+                marker_cccb8b8189c1856edaa4cbc3bb082a72.setIcon(icon_5df1e10373b2bdf520ed01cdcd73a9f2);
+            
+    
+            var marker_3e95ba8cb6b92d616afb56b0e898d822 = L.marker(
+                [-37.82294828867767, 144.97098568179825],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_c15c86827172b8c176a63009396a850e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_67768705e86adfca502b33e28241ed2c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_74d076da6f16f964e109d16ed2189e12 = $(`<div id="html_74d076da6f16f964e109d16ed2189e12" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 110 - Queen Victoria Gardens (Linlithgow Avenue)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_67768705e86adfca502b33e28241ed2c.setContent(html_74d076da6f16f964e109d16ed2189e12);
+            
+        
+
+        marker_3e95ba8cb6b92d616afb56b0e898d822.bindPopup(popup_67768705e86adfca502b33e28241ed2c)
+        ;
+
+        
+    
+    
+                marker_3e95ba8cb6b92d616afb56b0e898d822.setIcon(icon_c15c86827172b8c176a63009396a850e);
+            
+    
+            var marker_e1734066553e07038d0369752a677b6d = L.marker(
+                [-37.80682129201847, 144.95874700464088],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_69667b0949132c9fb4e6bf1d1bda1d1d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_356d69183c081cb647fe5086a944cf75 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4abd7a394d232a4418d3788d09739ff8 = $(`<div id="html_4abd7a394d232a4418d3788d09739ff8" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Queen Victoria Market - (Meat Hall / "H" Shed)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_356d69183c081cb647fe5086a944cf75.setContent(html_4abd7a394d232a4418d3788d09739ff8);
+            
+        
+
+        marker_e1734066553e07038d0369752a677b6d.bindPopup(popup_356d69183c081cb647fe5086a944cf75)
+        ;
+
+        
+    
+    
+                marker_e1734066553e07038d0369752a677b6d.setIcon(icon_69667b0949132c9fb4e6bf1d1bda1d1d);
+            
+    
+            var marker_cb8b17a9859c1f8f1bb58dbfeed9cfb0 = L.marker(
+                [-37.80207629420745, 144.96642403988702],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_eb978e8a7b6b155194dae4cb03dd7b9f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f1cd081b33a50f56d7cc3d2f05ecd9e2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b5f6e7d9534b56bfbd197b57ad100ed2 = $(`<div id="html_b5f6e7d9534b56bfbd197b57ad100ed2" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 178 -  Argyle Place North (Opposite 4 Argyle Place North)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_f1cd081b33a50f56d7cc3d2f05ecd9e2.setContent(html_b5f6e7d9534b56bfbd197b57ad100ed2);
+            
+        
+
+        marker_cb8b17a9859c1f8f1bb58dbfeed9cfb0.bindPopup(popup_f1cd081b33a50f56d7cc3d2f05ecd9e2)
+        ;
+
+        
+    
+    
+                marker_cb8b17a9859c1f8f1bb58dbfeed9cfb0.setIcon(icon_eb978e8a7b6b155194dae4cb03dd7b9f);
+            
+    
+            var marker_279f9aa0f51052ae757a55fe145ecafa = L.marker(
+                [-37.795523148389, 144.952142962802],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_7e68fbb5e2d203bc78b08322afb8fe52 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b0b0c67ed33e5dbc589e4cc9fde155d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_49d5e8a93883092b576b4d470f0c99ae = $(`<div id="html_49d5e8a93883092b576b4d470f0c99ae" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 55 - Royal Park (Nature Play, Opposite 51 Gatehouse Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_9b0b0c67ed33e5dbc589e4cc9fde155d.setContent(html_49d5e8a93883092b576b4d470f0c99ae);
+            
+        
+
+        marker_279f9aa0f51052ae757a55fe145ecafa.bindPopup(popup_9b0b0c67ed33e5dbc589e4cc9fde155d)
+        ;
+
+        
+    
+    
+                marker_279f9aa0f51052ae757a55fe145ecafa.setIcon(icon_7e68fbb5e2d203bc78b08322afb8fe52);
+            
+    
+            var marker_c49329e62ea12abdbdddb4eb31d0a46c = L.marker(
+                [-37.81790319705616, 144.9662642552638],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_922b8d35643aec1ce0a5e0c426cd96eb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f7a41a58b622587c74e185aadaa74cf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_70c033ac8c39edcfaf6aa2ce784f2300 = $(`<div id="html_70c033ac8c39edcfaf6aa2ce784f2300" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 41 - Flinders Street (No 245 Flinders Street Station)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_0f7a41a58b622587c74e185aadaa74cf.setContent(html_70c033ac8c39edcfaf6aa2ce784f2300);
+            
+        
+
+        marker_c49329e62ea12abdbdddb4eb31d0a46c.bindPopup(popup_0f7a41a58b622587c74e185aadaa74cf)
+        ;
+
+        
+    
+    
+                marker_c49329e62ea12abdbdddb4eb31d0a46c.setIcon(icon_922b8d35643aec1ce0a5e0c426cd96eb);
+            
+    
+            var marker_4f2bc6314296604458dc0547546f099a = L.marker(
+                [-37.81383779217631, 144.96309721024045],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_3ee80bf781a71cff9c0fe175da341384 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0dab701a2dd78361f6ac4bd4f0fb4117 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7503290c93167e20e01582df339532c0 = $(`<div id="html_7503290c93167e20e01582df339532c0" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 6 - Elizabeth Street (Toilet Adjacent 200 Elizabeth Street)</b><br>     Female: yes<br>     Male: no<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_0dab701a2dd78361f6ac4bd4f0fb4117.setContent(html_7503290c93167e20e01582df339532c0);
+            
+        
+
+        marker_4f2bc6314296604458dc0547546f099a.bindPopup(popup_0dab701a2dd78361f6ac4bd4f0fb4117)
+        ;
+
+        
+    
+    
+                marker_4f2bc6314296604458dc0547546f099a.setIcon(icon_3ee80bf781a71cff9c0fe175da341384);
+            
+    
+            var marker_0a34ae2b73bf01dff7ebfd1d29381108 = L.marker(
+                [-37.80463970714722, 144.96285021945613],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_8205b26b6fbc918bb27a83af3579f8e5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6422de9203cd53c236663566728f1893 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_547ded493077ab9a1e593b5afef8d3b4 = $(`<div id="html_547ded493077ab9a1e593b5afef8d3b4" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 142 - Queensberry Street (Adjacent 179 Queensberry Street)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_6422de9203cd53c236663566728f1893.setContent(html_547ded493077ab9a1e593b5afef8d3b4);
+            
+        
+
+        marker_0a34ae2b73bf01dff7ebfd1d29381108.bindPopup(popup_6422de9203cd53c236663566728f1893)
+        ;
+
+        
+    
+    
+                marker_0a34ae2b73bf01dff7ebfd1d29381108.setIcon(icon_8205b26b6fbc918bb27a83af3579f8e5);
+            
+    
+            var marker_9fe474d61790d7cbf81f713602e46c5a = L.marker(
+                [-37.818924455699296, 144.9342385117904],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_55dc5fee1301d4a9296a085aff241cee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c87ef27bcbc48fc9590f7fcb1dead24c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_58ab5b36bb4464b0bb0c93297c3d9178 = $(`<div id="html_58ab5b36bb4464b0bb0c93297c3d9178" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Victoria Harbour, Shed 2 (North Wharf Road)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_c87ef27bcbc48fc9590f7fcb1dead24c.setContent(html_58ab5b36bb4464b0bb0c93297c3d9178);
+            
+        
+
+        marker_9fe474d61790d7cbf81f713602e46c5a.bindPopup(popup_c87ef27bcbc48fc9590f7fcb1dead24c)
+        ;
+
+        
+    
+    
+                marker_9fe474d61790d7cbf81f713602e46c5a.setIcon(icon_55dc5fee1301d4a9296a085aff241cee);
+            
+    
+            var marker_6c5f3cbe63f927e9bee617882b0b51b7 = L.marker(
+                [-37.78622124839705, 144.9550008758734],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_42434283e0d825b435dabc5db78ea29a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a9e5fef9074a3a4e1dc131420b9a0cf8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3da251e3f4be2ac797fa569a06e8f609 = $(`<div id="html_3da251e3f4be2ac797fa569a06e8f609" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Royal Park Brens Pavilion</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_a9e5fef9074a3a4e1dc131420b9a0cf8.setContent(html_3da251e3f4be2ac797fa569a06e8f609);
+            
+        
+
+        marker_6c5f3cbe63f927e9bee617882b0b51b7.bindPopup(popup_a9e5fef9074a3a4e1dc131420b9a0cf8)
+        ;
+
+        
+    
+    
+                marker_6c5f3cbe63f927e9bee617882b0b51b7.setIcon(icon_42434283e0d825b435dabc5db78ea29a);
+            
+    
+            var marker_ef014eb9413aa8b4b5192eab6c3a0ddc = L.marker(
+                [-37.82331083443533, 144.94182760665478],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_918ff5a0dc7422805181f4dc70a6ffe8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_54aa5923f6b27ba57849b371ebd56b15 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_91d3398e57cf86ec66ddcc6419d1752d = $(`<div id="html_91d3398e57cf86ec66ddcc6419d1752d" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 181 - Point Park (Point Park Crescent)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: yes<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_54aa5923f6b27ba57849b371ebd56b15.setContent(html_91d3398e57cf86ec66ddcc6419d1752d);
+            
+        
+
+        marker_ef014eb9413aa8b4b5192eab6c3a0ddc.bindPopup(popup_54aa5923f6b27ba57849b371ebd56b15)
+        ;
+
+        
+    
+    
+                marker_ef014eb9413aa8b4b5192eab6c3a0ddc.setIcon(icon_918ff5a0dc7422805181f4dc70a6ffe8);
+            
+    
+            var marker_00d24d5bf206237330ec507dca7841ef = L.marker(
+                [-37.7789496090064, 144.96046591899102],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_c71cfd47538f4836839bae762a7a37ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c632acdfecfb63e3518e24908eceb522 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bf51eecb0902f0facf88056bf66b6c29 = $(`<div id="html_bf51eecb0902f0facf88056bf66b6c29" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 127 - Princes Park Royal Parade (near Park Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_c632acdfecfb63e3518e24908eceb522.setContent(html_bf51eecb0902f0facf88056bf66b6c29);
+            
+        
+
+        marker_00d24d5bf206237330ec507dca7841ef.bindPopup(popup_c632acdfecfb63e3518e24908eceb522)
+        ;
+
+        
+    
+    
+                marker_00d24d5bf206237330ec507dca7841ef.setIcon(icon_c71cfd47538f4836839bae762a7a37ea);
+            
+    
+            var marker_cea245181df9d77c8768859718cf4971 = L.marker(
+                [-37.845206563009405, 144.9826144313013],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_c35ee932ca3cef440b5c8277409d385a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_18d38b4cf30ee7202ba3a1a1d663cc84 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_97d6f48e998277ac6ff7bc484ea4fef5 = $(`<div id="html_97d6f48e998277ac6ff7bc484ea4fef5" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 42 - Fawkner Park, Opposite 55 Commercial Road</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_18d38b4cf30ee7202ba3a1a1d663cc84.setContent(html_97d6f48e998277ac6ff7bc484ea4fef5);
+            
+        
+
+        marker_cea245181df9d77c8768859718cf4971.bindPopup(popup_18d38b4cf30ee7202ba3a1a1d663cc84)
+        ;
+
+        
+    
+    
+                marker_cea245181df9d77c8768859718cf4971.setIcon(icon_c35ee932ca3cef440b5c8277409d385a);
+            
+    
+            var marker_4141ca49bf0460396be800f5f88d2241 = L.marker(
+                [-37.81341843500891, 144.97746700744847],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_b73558c64f70a825db9eef4d1e90a8dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ebbf99747b1d5d6a80fb270c4ed82823 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a06d8f8390d5b875da5d70e99f7b584a = $(`<div id="html_a06d8f8390d5b875da5d70e99f7b584a" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 122 - Treasury Gardens (Store and Toilet)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_ebbf99747b1d5d6a80fb270c4ed82823.setContent(html_a06d8f8390d5b875da5d70e99f7b584a);
+            
+        
+
+        marker_4141ca49bf0460396be800f5f88d2241.bindPopup(popup_ebbf99747b1d5d6a80fb270c4ed82823)
+        ;
+
+        
+    
+    
+                marker_4141ca49bf0460396be800f5f88d2241.setIcon(icon_b73558c64f70a825db9eef4d1e90a8dc);
+            
+    
+            var marker_dce0e6f16ae23fcaebd1162b30491609 = L.marker(
+                [-37.79812546150608, 144.92642466756246],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_5d7972e551428c13b4beadc41d2e3df2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7ca441643fa4bf4a2a4a12faf3273851 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4bcb3c3e7b9063f272a6bd3b9483342c = $(`<div id="html_4bcb3c3e7b9063f272a6bd3b9483342c" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 162 - JJ Holland Park (Opposite, 48 Altona Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_7ca441643fa4bf4a2a4a12faf3273851.setContent(html_4bcb3c3e7b9063f272a6bd3b9483342c);
+            
+        
+
+        marker_dce0e6f16ae23fcaebd1162b30491609.bindPopup(popup_7ca441643fa4bf4a2a4a12faf3273851)
+        ;
+
+        
+    
+    
+                marker_dce0e6f16ae23fcaebd1162b30491609.setIcon(icon_5d7972e551428c13b4beadc41d2e3df2);
+            
+    
+            var marker_f76cbf574dcebb1da56b8182971d9a6e = L.marker(
+                [-37.80783122147196, 144.95795526595654],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_c87a5c12eb0662ef2686cad634d78988 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_273508f71f2750bbea0fb9f5b0973620 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c12205926dbf37c236f739beb68540e5 = $(`<div id="html_c12205926dbf37c236f739beb68540e5" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Queen Victoria Market (465 Queen Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: yes<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_273508f71f2750bbea0fb9f5b0973620.setContent(html_c12205926dbf37c236f739beb68540e5);
+            
+        
+
+        marker_f76cbf574dcebb1da56b8182971d9a6e.bindPopup(popup_273508f71f2750bbea0fb9f5b0973620)
+        ;
+
+        
+    
+    
+                marker_f76cbf574dcebb1da56b8182971d9a6e.setIcon(icon_c87a5c12eb0662ef2686cad634d78988);
+            
+    
+            var marker_a450e96e439fbfef32742829f7ad333a = L.marker(
+                [-37.787904827147685, 144.95949479077186],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_393422ef5bb89222a16ed26188a0eabb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a52fd2416905e46dbbb9b85511564079 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_340a1a3042106d9950758b2513ca0f39 = $(`<div id="html_340a1a3042106d9950758b2513ca0f39" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 52 - Princes Park (Adjacent Southern Sports Pavilion)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_a52fd2416905e46dbbb9b85511564079.setContent(html_340a1a3042106d9950758b2513ca0f39);
+            
+        
+
+        marker_a450e96e439fbfef32742829f7ad333a.bindPopup(popup_a52fd2416905e46dbbb9b85511564079)
+        ;
+
+        
+    
+    
+                marker_a450e96e439fbfef32742829f7ad333a.setIcon(icon_393422ef5bb89222a16ed26188a0eabb);
+            
+    
+            var marker_1800bef7e1af27e41020bf9aea912f53 = L.marker(
+                [-37.803094275484256, 144.94994632091922],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_f2388e44a8ef53554363cfb30daa4fb5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "gray",
+  "iconColor": "white",
+  "icon": "question",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_18aee8e5adf14abb023aa5b3590507a3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_efdaef517535148a5f53defa8260dd85 = $(`<div id="html_efdaef517535148a5f53defa8260dd85" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 13 - Queensberry Street (Opposite 530 Queensberry Street)</b><br>     Female: nan<br>     Male: nan<br>     Wheelchair: nan<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_18aee8e5adf14abb023aa5b3590507a3.setContent(html_efdaef517535148a5f53defa8260dd85);
+            
+        
+
+        marker_1800bef7e1af27e41020bf9aea912f53.bindPopup(popup_18aee8e5adf14abb023aa5b3590507a3)
+        ;
+
+        
+    
+    
+                marker_1800bef7e1af27e41020bf9aea912f53.setIcon(icon_f2388e44a8ef53554363cfb30daa4fb5);
+            
+    
+            var marker_426b20f8253d67425b54e8c2fa1a829c = L.marker(
+                [-37.81746989209639, 144.96025433528794],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_517e8731ac3023ed08bb8b03d11caeeb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f97543db52af32c2b957c16f0d9d3fc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_517caf93a9d78832376c6fbd74e996ab = $(`<div id="html_517caf93a9d78832376c6fbd74e996ab" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 4 - Market Street (Opposite 74 Market Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_2f97543db52af32c2b957c16f0d9d3fc.setContent(html_517caf93a9d78832376c6fbd74e996ab);
+            
+        
+
+        marker_426b20f8253d67425b54e8c2fa1a829c.bindPopup(popup_2f97543db52af32c2b957c16f0d9d3fc)
+        ;
+
+        
+    
+    
+                marker_426b20f8253d67425b54e8c2fa1a829c.setIcon(icon_517e8731ac3023ed08bb8b03d11caeeb);
+            
+    
+            var marker_e0cbfd4e1af336bd73b90b344aaced20 = L.marker(
+                [-37.79806402388687, 144.92110584392117],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_5448b0a3818bb2bc29fed10ee03d202c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3e3a3d9e719be01c527c7bf647d995bf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_65da59e4009f3fa6cac29c6fb15d09bb = $(`<div id="html_65da59e4009f3fa6cac29c6fb15d09bb" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 173 - JJ Holland Park, Skate Park (113 Kensington Road)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_3e3a3d9e719be01c527c7bf647d995bf.setContent(html_65da59e4009f3fa6cac29c6fb15d09bb);
+            
+        
+
+        marker_e0cbfd4e1af336bd73b90b344aaced20.bindPopup(popup_3e3a3d9e719be01c527c7bf647d995bf)
+        ;
+
+        
+    
+    
+                marker_e0cbfd4e1af336bd73b90b344aaced20.setIcon(icon_5448b0a3818bb2bc29fed10ee03d202c);
+            
+    
+            var marker_e92290d3149f001ae96f08ac0a113da3 = L.marker(
+                [-37.8100356799286, 144.96990246330486],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_51e45235584b00d3e2f26e7aaf8c293d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b92ad2e871b1fbd794af539e66a5217b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fa0d64203da9f75672cbfdc466b5bd07 = $(`<div id="html_fa0d64203da9f75672cbfdc466b5bd07" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 11 - Lonsdale Street (Opposite 88 Lonsdale Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_b92ad2e871b1fbd794af539e66a5217b.setContent(html_fa0d64203da9f75672cbfdc466b5bd07);
+            
+        
+
+        marker_e92290d3149f001ae96f08ac0a113da3.bindPopup(popup_b92ad2e871b1fbd794af539e66a5217b)
+        ;
+
+        
+    
+    
+                marker_e92290d3149f001ae96f08ac0a113da3.setIcon(icon_51e45235584b00d3e2f26e7aaf8c293d);
+            
+    
+            var marker_3999ff52c3cae067e83a80587c794ac6 = L.marker(
+                [-37.80954604636232, 144.9694071187106],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_98a2a4bd03ef0577059b2a24f49fcc1a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "ban",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6693a00758ea1f259513d60d9eec2f14 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9ff88b884ca2bc382d0f1c71ea61ffaf = $(`<div id="html_9ff88b884ca2bc382d0f1c71ea61ffaf" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 12 - Exhibition Street (Opposite 242 Exhibition Street)</b><br>     Female: no<br>     Male: yes<br>     Wheelchair: no<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_6693a00758ea1f259513d60d9eec2f14.setContent(html_9ff88b884ca2bc382d0f1c71ea61ffaf);
+            
+        
+
+        marker_3999ff52c3cae067e83a80587c794ac6.bindPopup(popup_6693a00758ea1f259513d60d9eec2f14)
+        ;
+
+        
+    
+    
+                marker_3999ff52c3cae067e83a80587c794ac6.setIcon(icon_98a2a4bd03ef0577059b2a24f49fcc1a);
+            
+    
+            var marker_ac49869c507a3e824ccc8896d94737e4 = L.marker(
+                [-37.81940611413847, 144.96127683121782],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_873bd4e57db33b090961b7eca38bb98e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_10cd75b5e214e6331fca876e25a67fd1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c182f74be8de91caa6e8021282e4430b = $(`<div id="html_c182f74be8de91caa6e8021282e4430b" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 3 - Flinders Street (399 Flinders Street)</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_10cd75b5e214e6331fca876e25a67fd1.setContent(html_c182f74be8de91caa6e8021282e4430b);
+            
+        
+
+        marker_ac49869c507a3e824ccc8896d94737e4.bindPopup(popup_10cd75b5e214e6331fca876e25a67fd1)
+        ;
+
+        
+    
+    
+                marker_ac49869c507a3e824ccc8896d94737e4.setIcon(icon_873bd4e57db33b090961b7eca38bb98e);
+            
+    
+            var marker_651beb942ecde137a5be5d3970da6edd = L.marker(
+                [-37.83825284124979, 144.98438921994168],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_5c5af9497c83d4310035a24dfef93aea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eb275cc517b10fcd9c1138e1eb7e7c6e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9e9fe41820230b06d4eef970eaac5113 = $(`<div id="html_9e9fe41820230b06d4eef970eaac5113" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 44 - Fawkner Park, Opposite 150W Toorak Road</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_eb275cc517b10fcd9c1138e1eb7e7c6e.setContent(html_9e9fe41820230b06d4eef970eaac5113);
+            
+        
+
+        marker_651beb942ecde137a5be5d3970da6edd.bindPopup(popup_eb275cc517b10fcd9c1138e1eb7e7c6e)
+        ;
+
+        
+    
+    
+                marker_651beb942ecde137a5be5d3970da6edd.setIcon(icon_5c5af9497c83d4310035a24dfef93aea);
+            
+    
+            var marker_be577e085e2437b71cfff056a8332775 = L.marker(
+                [-37.79679899805757, 144.95196665126468],
+                {
+}
+            ).addTo(marker_cluster_be9409f4deb25fe304b701b1655ec787);
+        
+    
+            var icon_7a4cd243c3ca1349849f9944d613cee8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "wheelchair",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4110e5d290f00c2711f2ee0194142313 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_25a6036120198e9e80c94f6774190c2e = $(`<div id="html_25a6036120198e9e80c94f6774190c2e" style="width: 100.0%; height: 100.0%;">     <b>Public Toilet - Toilet 136 - Ievers Reserve - Flemington Road</b><br>     Female: yes<br>     Male: yes<br>     Wheelchair: yes<br>     Baby Facilities: no<br>     Operator: City of Melbourne     </div>`)[0];
+                popup_4110e5d290f00c2711f2ee0194142313.setContent(html_25a6036120198e9e80c94f6774190c2e);
+            
+        
+
+        marker_be577e085e2437b71cfff056a8332775.bindPopup(popup_4110e5d290f00c2711f2ee0194142313)
+        ;
+
+        
+    
+    
+                marker_be577e085e2437b71cfff056a8332775.setIcon(icon_7a4cd243c3ca1349849f9944d613cee8);
+            
+    
+            marker_cluster_be9409f4deb25fe304b701b1655ec787.addTo(map_11ea599fdafa58f7c2c36d3e958ce07e);
+        
+</script>
+</html>
