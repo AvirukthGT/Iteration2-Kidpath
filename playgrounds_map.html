@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_85626ba739903c9177913ad2049a5769 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 50px; left: 50px; width: 220px; height: 100px; 
+            background-color: white; border:2px solid grey; z-index:9999; 
+            font-size:14px; padding: 10px">
+<p><b>Legend</b></p>
+<p><i class="fa fa-child" style="color:green"></i> Accessible Playground</p>
+<p><i class="fa fa-child" style="color:red"></i> Non-Accessible Playground</p>
+</div>
+    
+            <div class="folium-map" id="map_85626ba739903c9177913ad2049a5769" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_85626ba739903c9177913ad2049a5769 = L.map(
+                "map_85626ba739903c9177913ad2049a5769",
+                {
+                    center: [-37.804891290687145, 144.94936695231405],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f7fe06739b58f13b526101fd2dbf731d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f7fe06739b58f13b526101fd2dbf731d.addTo(map_85626ba739903c9177913ad2049a5769);
+        
+    
+            var marker_cluster_31445e0c9c7448f276d2b8c490e8d159 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_720ccb23b128967e7eab68c6170057af = L.marker(
+                [-37.79980317243133, 144.94146553497296],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_93e53c06c78a35b6275be0ffe54b7cf4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_09c8b1e4e8c38fac4395df50e8c4554b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_409a82f75785de496251d6a221e4c52c = $(`<div id="html_409a82f75785de496251d6a221e4c52c" style="width: 100.0%; height: 100.0%;">     <b>North Melbourne Recreation Reserve Play Court</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1618816<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basketball<br>     <b>Distance from CBD:</b> 2.4 km<br>     <b>Equipment Count:</b> 1     </div>`)[0];
+                popup_09c8b1e4e8c38fac4395df50e8c4554b.setContent(html_409a82f75785de496251d6a221e4c52c);
+            
+        
+
+        marker_720ccb23b128967e7eab68c6170057af.bindPopup(popup_09c8b1e4e8c38fac4395df50e8c4554b)
+        ;
+
+        
+    
+    
+                marker_720ccb23b128967e7eab68c6170057af.setIcon(icon_93e53c06c78a35b6275be0ffe54b7cf4);
+            
+    
+            var marker_8b18a5c7ae514e706293fd6b772635d2 = L.marker(
+                [-37.79003673843191, 144.9256728627734],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_2aedadd1af3d75b51d363cc35fadeb4b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_46b42006f87cf8a2d86378daa176402d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_2e91f71a83112fabe7aa98755ddd406a = $(`<div id="html_2e91f71a83112fabe7aa98755ddd406a" style="width: 100.0%; height: 100.0%;">     <b>Liddy Street Reserve Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450827<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Spring<br>     <b>Distance from CBD:</b> 4.2 km<br>     <b>Equipment Count:</b> 1     </div>`)[0];
+                popup_46b42006f87cf8a2d86378daa176402d.setContent(html_2e91f71a83112fabe7aa98755ddd406a);
+            
+        
+
+        marker_8b18a5c7ae514e706293fd6b772635d2.bindPopup(popup_46b42006f87cf8a2d86378daa176402d)
+        ;
+
+        
+    
+    
+                marker_8b18a5c7ae514e706293fd6b772635d2.setIcon(icon_2aedadd1af3d75b51d363cc35fadeb4b);
+            
+    
+            var marker_441de5c345482ae7e20bcc5edcd785e7 = L.marker(
+                [-37.82611400247897, 144.96163469344134],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_1587a5dfdceb6fdc6bbf05b0683fbe21 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_356b9bc00413258c3cb2ebae8c4f91c6 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_0148650585c15668d86903b5fa8d7fa0 = $(`<div id="html_0148650585c15668d86903b5fa8d7fa0" style="width: 100.0%; height: 100.0%;">     <b>Boyd Community Hub</b><br>     <b>Region:</b> Central<br>     <b>Council:</b> 1660076<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Climbing, Sand, Basketball, See Saw<br>     <b>Distance from CBD:</b> 1.4 km<br>     <b>Equipment Count:</b> 6     </div>`)[0];
+                popup_356b9bc00413258c3cb2ebae8c4f91c6.setContent(html_0148650585c15668d86903b5fa8d7fa0);
+            
+        
+
+        marker_441de5c345482ae7e20bcc5edcd785e7.bindPopup(popup_356b9bc00413258c3cb2ebae8c4f91c6)
+        ;
+
+        
+    
+    
+                marker_441de5c345482ae7e20bcc5edcd785e7.setIcon(icon_1587a5dfdceb6fdc6bbf05b0683fbe21);
+            
+    
+            var marker_f8ac8cc8d79114ce60262b77d071e700 = L.marker(
+                [-37.781221527129574, 144.96214347994342],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_0e1c924a1a03a386b5e4e45b0d4d1f12 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d9ca24505edb05d29f083f9fdba2e824 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_6cc394e2f96285c2d99445ba92a9c1ab = $(`<div id="html_6cc394e2f96285c2d99445ba92a9c1ab" style="width: 100.0%; height: 100.0%;">     <b>Princes Park North Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450816<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, See Saw, Spring<br>     <b>Distance from CBD:</b> 3.6 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_d9ca24505edb05d29f083f9fdba2e824.setContent(html_6cc394e2f96285c2d99445ba92a9c1ab);
+            
+        
+
+        marker_f8ac8cc8d79114ce60262b77d071e700.bindPopup(popup_d9ca24505edb05d29f083f9fdba2e824)
+        ;
+
+        
+    
+    
+                marker_f8ac8cc8d79114ce60262b77d071e700.setIcon(icon_0e1c924a1a03a386b5e4e45b0d4d1f12);
+            
+    
+            var marker_abcba4abc76e88f6108e735cb072ddd3 = L.marker(
+                [-37.796615304958806, 144.92060508965284],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_368341dacd28db50b727da64e466022e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ca16a371e5287c155f6e2fb5fdf7a938 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_2fb6d65990bbab51e48792db1c647e41 = $(`<div id="html_2fb6d65990bbab51e48792db1c647e41" style="width: 100.0%; height: 100.0%;">     <b>Mercantile Parade and Tankard Street Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450817<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Shade, Fence, Tower, See Saw<br>     <b>Distance from CBD:</b> 4.2 km<br>     <b>Equipment Count:</b> 5     </div>`)[0];
+                popup_ca16a371e5287c155f6e2fb5fdf7a938.setContent(html_2fb6d65990bbab51e48792db1c647e41);
+            
+        
+
+        marker_abcba4abc76e88f6108e735cb072ddd3.bindPopup(popup_ca16a371e5287c155f6e2fb5fdf7a938)
+        ;
+
+        
+    
+    
+                marker_abcba4abc76e88f6108e735cb072ddd3.setIcon(icon_368341dacd28db50b727da64e466022e);
+            
+    
+            var marker_709f4038e99ef12d796bee6fb8cee7cc = L.marker(
+                [-37.818149015388066, 144.9712309067726],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_1f1df7acf3647fcad4fc71daada0a668 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aaf0ac0f244d3613e667c3e5dc6c999b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_c5adcebd96bed5307bfb02bac3986eee = $(`<div id="html_c5adcebd96bed5307bfb02bac3986eee" style="width: 100.0%; height: 100.0%;">     <b>Birrarung Marr Artplay</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450820<br>     <b>Accessible:</b> Yes<br>     <b>Equipment:</b> Swing, Climbing, Shade, Accessible<br>     <b>Distance from CBD:</b> 0.9 km<br>     <b>Equipment Count:</b> 4     </div>`)[0];
+                popup_aaf0ac0f244d3613e667c3e5dc6c999b.setContent(html_c5adcebd96bed5307bfb02bac3986eee);
+            
+        
+
+        marker_709f4038e99ef12d796bee6fb8cee7cc.bindPopup(popup_aaf0ac0f244d3613e667c3e5dc6c999b)
+        ;
+
+        
+    
+    
+                marker_709f4038e99ef12d796bee6fb8cee7cc.setIcon(icon_1f1df7acf3647fcad4fc71daada0a668);
+            
+    
+            var marker_b64dfad5eef1aa1ab0c0ace4d600a885 = L.marker(
+                [-37.79542804645323, 144.92088329716032],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_f2d6ba77f3f9c413f4b910cab8a6594b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba4e162195d3d46deed2861923d08ff7 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a5a50ce66e1beb5b76c62a734a3f0218 = $(`<div id="html_a5a50ce66e1beb5b76c62a734a3f0218" style="width: 100.0%; height: 100.0%;">     <b>Mercantile Parade and Newman Street Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450818<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Slide<br>     <b>Distance from CBD:</b> 4.2 km<br>     <b>Equipment Count:</b> 1     </div>`)[0];
+                popup_ba4e162195d3d46deed2861923d08ff7.setContent(html_a5a50ce66e1beb5b76c62a734a3f0218);
+            
+        
+
+        marker_b64dfad5eef1aa1ab0c0ace4d600a885.bindPopup(popup_ba4e162195d3d46deed2861923d08ff7)
+        ;
+
+        
+    
+    
+                marker_b64dfad5eef1aa1ab0c0ace4d600a885.setIcon(icon_f2d6ba77f3f9c413f4b910cab8a6594b);
+            
+    
+            var marker_3ba7c3ec0b1b1ab6c02aa7b49894cfe5 = L.marker(
+                [-37.8218009873152, 144.94722750144075],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_0a4088eb2828849db27470f307ae1dc1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_010bea04298667511629d291c6292714 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f8407558dc2b555def84e0749998f0ac = $(`<div id="html_f8407558dc2b555def84e0749998f0ac" style="width: 100.0%; height: 100.0%;">     <b>Docklands Park Playground</b><br>     <b>Region:</b> West<br>     <b>Council:</b> 1450822<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide<br>     <b>Distance from CBD:</b> 1.7 km<br>     <b>Equipment Count:</b> 2     </div>`)[0];
+                popup_010bea04298667511629d291c6292714.setContent(html_f8407558dc2b555def84e0749998f0ac);
+            
+        
+
+        marker_3ba7c3ec0b1b1ab6c02aa7b49894cfe5.bindPopup(popup_010bea04298667511629d291c6292714)
+        ;
+
+        
+    
+    
+                marker_3ba7c3ec0b1b1ab6c02aa7b49894cfe5.setIcon(icon_0a4088eb2828849db27470f307ae1dc1);
+            
+    
+            var marker_2e7e80549e339d5c38bd164774453340 = L.marker(
+                [-37.8020962906074, 144.97067458905988],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_6b82d724cd12f126288d305cd9ff9c76 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba3c2b83c1fb7f604196dbc817d80ca7 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_a95294a0181710f7d7e506649cdb6d8b = $(`<div id="html_a95294a0181710f7d7e506649cdb6d8b" style="width: 100.0%; height: 100.0%;">     <b>Carlton Gardens Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450821<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Climbing, Sand, Shade<br>     <b>Distance from CBD:</b> 1.4 km<br>     <b>Equipment Count:</b> 5     </div>`)[0];
+                popup_ba3c2b83c1fb7f604196dbc817d80ca7.setContent(html_a95294a0181710f7d7e506649cdb6d8b);
+            
+        
+
+        marker_2e7e80549e339d5c38bd164774453340.bindPopup(popup_ba3c2b83c1fb7f604196dbc817d80ca7)
+        ;
+
+        
+    
+    
+                marker_2e7e80549e339d5c38bd164774453340.setIcon(icon_6b82d724cd12f126288d305cd9ff9c76);
+            
+    
+            var marker_1b3f035974f222d37078eee7eddc05c6 = L.marker(
+                [-37.797285033377186, 144.9739866829798],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_79237ee3f9a092cbc1f4bd2b5af2739a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_da85e27b267417e620d26ee2ccdb5c0d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_0dea10f3f014f7b9aea1d3a74f567a54 = $(`<div id="html_0dea10f3f014f7b9aea1d3a74f567a54" style="width: 100.0%; height: 100.0%;">     <b>Station Street Park Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1557352<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Climbing<br>     <b>Distance from CBD:</b> 2.1 km<br>     <b>Equipment Count:</b> 1     </div>`)[0];
+                popup_da85e27b267417e620d26ee2ccdb5c0d.setContent(html_0dea10f3f014f7b9aea1d3a74f567a54);
+            
+        
+
+        marker_1b3f035974f222d37078eee7eddc05c6.bindPopup(popup_da85e27b267417e620d26ee2ccdb5c0d)
+        ;
+
+        
+    
+    
+                marker_1b3f035974f222d37078eee7eddc05c6.setIcon(icon_79237ee3f9a092cbc1f4bd2b5af2739a);
+            
+    
+            var marker_dd5bb6f8ff07ec73b6d64ca38dcad335 = L.marker(
+                [-37.80284131718294, 144.9626564799592],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_b6eb6d5fa3cb4ed085986f31bdd36cc8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c5089b3fad23b763866afc11a88a5f54 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d454001965ba92c6530717d76d901638 = $(`<div id="html_d454001965ba92c6530717d76d901638" style="width: 100.0%; height: 100.0%;">     <b>Lincoln Square Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450819<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Shade<br>     <b>Distance from CBD:</b> 1.2 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_c5089b3fad23b763866afc11a88a5f54.setContent(html_d454001965ba92c6530717d76d901638);
+            
+        
+
+        marker_dd5bb6f8ff07ec73b6d64ca38dcad335.bindPopup(popup_c5089b3fad23b763866afc11a88a5f54)
+        ;
+
+        
+    
+    
+                marker_dd5bb6f8ff07ec73b6d64ca38dcad335.setIcon(icon_b6eb6d5fa3cb4ed085986f31bdd36cc8);
+            
+    
+            var marker_db30265590a1c2b9343dc0041f64bd22 = L.marker(
+                [-37.8095257090171, 144.95471867901864],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_0eee77c8642c7b4b7842c78896891319 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cdefd1ab967f54ae00f4b864c19748f9 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_0db751ef5677eca6229f0ed1cdceb85b = $(`<div id="html_0db751ef5677eca6229f0ed1cdceb85b" style="width: 100.0%; height: 100.0%;">     <b>Flagstaff Gardens Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1719660<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Sand, Shade<br>     <b>Distance from CBD:</b> 0.9 km<br>     <b>Equipment Count:</b> 4     </div>`)[0];
+                popup_cdefd1ab967f54ae00f4b864c19748f9.setContent(html_0db751ef5677eca6229f0ed1cdceb85b);
+            
+        
+
+        marker_db30265590a1c2b9343dc0041f64bd22.bindPopup(popup_cdefd1ab967f54ae00f4b864c19748f9)
+        ;
+
+        
+    
+    
+                marker_db30265590a1c2b9343dc0041f64bd22.setIcon(icon_0eee77c8642c7b4b7842c78896891319);
+            
+    
+            var marker_72818cd761522466a9d29d3f2c1aaf9e = L.marker(
+                [-37.82307176194582, 144.94158310181788],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_90f355c4db827dc26a6dea0456b05a32 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1fb36803843f9cbf1b4f012049534dd0 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f6b3c03c465186cd6e231efd01b229be = $(`<div id="html_f6b3c03c465186cd6e231efd01b229be" style="width: 100.0%; height: 100.0%;">     <b>Point Park Playground</b><br>     <b>Region:</b> West<br>     <b>Council:</b> 1590516<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Sand<br>     <b>Distance from CBD:</b> 2.2 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_1fb36803843f9cbf1b4f012049534dd0.setContent(html_f6b3c03c465186cd6e231efd01b229be);
+            
+        
+
+        marker_72818cd761522466a9d29d3f2c1aaf9e.bindPopup(popup_1fb36803843f9cbf1b4f012049534dd0)
+        ;
+
+        
+    
+    
+                marker_72818cd761522466a9d29d3f2c1aaf9e.setIcon(icon_90f355c4db827dc26a6dea0456b05a32);
+            
+    
+            var marker_2a64b22f8770cd2de559fc0bd66f0995 = L.marker(
+                [-37.79520740161526, 144.96970314493564],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_8403e287f5f099634ee4aafe7f579d27 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_204d431163b92bb0bfbf4b02d8ef848f = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_83526587fbca1dd2172b454ac0cb37a1 = $(`<div id="html_83526587fbca1dd2172b454ac0cb37a1" style="width: 100.0%; height: 100.0%;">     <b>Neill Street Reserve</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1603370<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing<br>     <b>Distance from CBD:</b> 2.1 km<br>     <b>Equipment Count:</b> 1     </div>`)[0];
+                popup_204d431163b92bb0bfbf4b02d8ef848f.setContent(html_83526587fbca1dd2172b454ac0cb37a1);
+            
+        
+
+        marker_2a64b22f8770cd2de559fc0bd66f0995.bindPopup(popup_204d431163b92bb0bfbf4b02d8ef848f)
+        ;
+
+        
+    
+    
+                marker_2a64b22f8770cd2de559fc0bd66f0995.setIcon(icon_8403e287f5f099634ee4aafe7f579d27);
+            
+    
+            var marker_418ea3b60f5a11101993411a31e7b87a = L.marker(
+                [-37.79616817586979, 144.9267597762389],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_d7a0a01ee2b6eb050dfdb545535ba3d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_045d020e4ae23c17062454c28937d14d = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_521b7fe81980829ec8682a327588a35a = $(`<div id="html_521b7fe81980829ec8682a327588a35a" style="width: 100.0%; height: 100.0%;">     <b>Warun Biik Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1554261<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basic equipment<br>     <b>Distance from CBD:</b> 3.7 km<br>     <b>Equipment Count:</b> 0     </div>`)[0];
+                popup_045d020e4ae23c17062454c28937d14d.setContent(html_521b7fe81980829ec8682a327588a35a);
+            
+        
+
+        marker_418ea3b60f5a11101993411a31e7b87a.bindPopup(popup_045d020e4ae23c17062454c28937d14d)
+        ;
+
+        
+    
+    
+                marker_418ea3b60f5a11101993411a31e7b87a.setIcon(icon_d7a0a01ee2b6eb050dfdb545535ba3d4);
+            
+    
+            var marker_c6ffe9a8cbafb0c65df9d25a43667852 = L.marker(
+                [-37.79652622815778, 144.95277288002004],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_53851b46cf74111337f91335d31bf7fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fbb8ea7205c2db14e4f32a3abbc64d37 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_284787acba9c97dec80289317da7ae69 = $(`<div id="html_284787acba9c97dec80289317da7ae69" style="width: 100.0%; height: 100.0%;">     <b>Ievers Reserve Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450813<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Climbing, Shade, Tower<br>     <b>Distance from CBD:</b> 2.1 km<br>     <b>Equipment Count:</b> 5     </div>`)[0];
+                popup_fbb8ea7205c2db14e4f32a3abbc64d37.setContent(html_284787acba9c97dec80289317da7ae69);
+            
+        
+
+        marker_c6ffe9a8cbafb0c65df9d25a43667852.bindPopup(popup_fbb8ea7205c2db14e4f32a3abbc64d37)
+        ;
+
+        
+    
+    
+                marker_c6ffe9a8cbafb0c65df9d25a43667852.setIcon(icon_53851b46cf74111337f91335d31bf7fd);
+            
+    
+            var marker_ae83ef027480ba92ed9a4cbb58f0e865 = L.marker(
+                [-37.81158137797367, 144.9865706304634],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_0cc862baa9234c310ba8b3528c753728 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c6bbafad1368c66ca85c26ed7d43be1 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5526d7af308d72c0e3444c0ef532fafb = $(`<div id="html_5526d7af308d72c0e3444c0ef532fafb" style="width: 100.0%; height: 100.0%;">     <b>Powlett Reserve Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450804<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Sand, Shade, Tower, Spring<br>     <b>Distance from CBD:</b> 2.1 km<br>     <b>Equipment Count:</b> 5     </div>`)[0];
+                popup_0c6bbafad1368c66ca85c26ed7d43be1.setContent(html_5526d7af308d72c0e3444c0ef532fafb);
+            
+        
+
+        marker_ae83ef027480ba92ed9a4cbb58f0e865.bindPopup(popup_0c6bbafad1368c66ca85c26ed7d43be1)
+        ;
+
+        
+    
+    
+                marker_ae83ef027480ba92ed9a4cbb58f0e865.setIcon(icon_0cc862baa9234c310ba8b3528c753728);
+            
+    
+            var marker_fb3fa70c5e215f0010772544006a26fa = L.marker(
+                [-37.840668223257225, 144.98402897622898],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_33c29b72154883cc931f2653c4f8976c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7896a261b124a92e6499ec8043b09ebb = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ca659aa5badc55992dbd1dcdcfd52f1c = $(`<div id="html_ca659aa5badc55992dbd1dcdcfd52f1c" style="width: 100.0%; height: 100.0%;">     <b>Fawkner Park East</b><br>     <b>Region:</b> South<br>     <b>Council:</b> 1450801<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Climbing, Shade, See Saw, Spring<br>     <b>Distance from CBD:</b> 3.5 km<br>     <b>Equipment Count:</b> 5     </div>`)[0];
+                popup_7896a261b124a92e6499ec8043b09ebb.setContent(html_ca659aa5badc55992dbd1dcdcfd52f1c);
+            
+        
+
+        marker_fb3fa70c5e215f0010772544006a26fa.bindPopup(popup_7896a261b124a92e6499ec8043b09ebb)
+        ;
+
+        
+    
+    
+                marker_fb3fa70c5e215f0010772544006a26fa.setIcon(icon_33c29b72154883cc931f2653c4f8976c);
+            
+    
+            var marker_98db38594075aac0ab3707bfecb86428 = L.marker(
+                [-37.79319152147504, 144.93241661314613],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_848b4779e451c85def4fe09546d60ec1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bec92c1c3c620fa4ea68a16cf3975ba2 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_e2eda33d37a00c862406db08a5a54bbb = $(`<div id="html_e2eda33d37a00c862406db08a5a54bbb" style="width: 100.0%; height: 100.0%;">     <b>Robertson Street Park Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450824<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Spring<br>     <b>Distance from CBD:</b> 3.5 km<br>     <b>Equipment Count:</b> 2     </div>`)[0];
+                popup_bec92c1c3c620fa4ea68a16cf3975ba2.setContent(html_e2eda33d37a00c862406db08a5a54bbb);
+            
+        
+
+        marker_98db38594075aac0ab3707bfecb86428.bindPopup(popup_bec92c1c3c620fa4ea68a16cf3975ba2)
+        ;
+
+        
+    
+    
+                marker_98db38594075aac0ab3707bfecb86428.setIcon(icon_848b4779e451c85def4fe09546d60ec1);
+            
+    
+            var marker_0edc81d463fd957ee05c1d21abc65454 = L.marker(
+                [-37.790191684378094, 144.93108110732882],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_2ef9f27ad4c5916cb750dc8039353acc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7aa24305cab28e56ecba0200ddae377a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_1fdcec880b07474b92d5ae828250dad3 = $(`<div id="html_1fdcec880b07474b92d5ae828250dad3" style="width: 100.0%; height: 100.0%;">     <b>Parsons Reserve Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450823<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Spring<br>     <b>Distance from CBD:</b> 3.8 km<br>     <b>Equipment Count:</b> 2     </div>`)[0];
+                popup_7aa24305cab28e56ecba0200ddae377a.setContent(html_1fdcec880b07474b92d5ae828250dad3);
+            
+        
+
+        marker_0edc81d463fd957ee05c1d21abc65454.bindPopup(popup_7aa24305cab28e56ecba0200ddae377a)
+        ;
+
+        
+    
+    
+                marker_0edc81d463fd957ee05c1d21abc65454.setIcon(icon_2ef9f27ad4c5916cb750dc8039353acc);
+            
+    
+            var marker_f6917f34d0dbc2dbc9daa421a887d903 = L.marker(
+                [-37.7978870186655, 144.9259420093936],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_ae99d0c221d9c34f78eb488cf52e41d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_53a77e04a91dcef9794d95b6229dfa54 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d2703b465f118ba78dddeea68190931c = $(`<div id="html_d2703b465f118ba78dddeea68190931c" style="width: 100.0%; height: 100.0%;">     <b>Holland Park Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450808<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Shade, See Saw<br>     <b>Distance from CBD:</b> 3.7 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_53a77e04a91dcef9794d95b6229dfa54.setContent(html_d2703b465f118ba78dddeea68190931c);
+            
+        
+
+        marker_f6917f34d0dbc2dbc9daa421a887d903.bindPopup(popup_53a77e04a91dcef9794d95b6229dfa54)
+        ;
+
+        
+    
+    
+                marker_f6917f34d0dbc2dbc9daa421a887d903.setIcon(icon_ae99d0c221d9c34f78eb488cf52e41d1);
+            
+    
+            var marker_1923697a651ab8580dc00f8117f26de3 = L.marker(
+                [-37.838793729508225, 144.9850522156393],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_fa504e85baa9cae743cc7a10cda61645 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3d943a10f536d1581f9a779d497d0f14 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b4a03a1b9aa30a5123cef3500fdf8e14 = $(`<div id="html_b4a03a1b9aa30a5123cef3500fdf8e14" style="width: 100.0%; height: 100.0%;">     <b>Fawkner Park North East</b><br>     <b>Region:</b> South<br>     <b>Council:</b> 1450806<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Shade<br>     <b>Distance from CBD:</b> 3.4 km<br>     <b>Equipment Count:</b> 1     </div>`)[0];
+                popup_3d943a10f536d1581f9a779d497d0f14.setContent(html_b4a03a1b9aa30a5123cef3500fdf8e14);
+            
+        
+
+        marker_1923697a651ab8580dc00f8117f26de3.bindPopup(popup_3d943a10f536d1581f9a779d497d0f14)
+        ;
+
+        
+    
+    
+                marker_1923697a651ab8580dc00f8117f26de3.setIcon(icon_fa504e85baa9cae743cc7a10cda61645);
+            
+    
+            var marker_707d11243a44830686438ff43cf79387 = L.marker(
+                [-37.816522726624655, 144.93375500298453],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_9f7b33c09bff31e71393c6f346145721 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_92438ca6f23813b8651004bf77985f52 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_af869016db96560006e15ab3ba2c3214 = $(`<div id="html_af869016db96560006e15ab3ba2c3214" style="width: 100.0%; height: 100.0%;">     <b>Ron Barassi Senior Park Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1631085<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basic equipment<br>     <b>Distance from CBD:</b> 2.6 km<br>     <b>Equipment Count:</b> 0     </div>`)[0];
+                popup_92438ca6f23813b8651004bf77985f52.setContent(html_af869016db96560006e15ab3ba2c3214);
+            
+        
+
+        marker_707d11243a44830686438ff43cf79387.bindPopup(popup_92438ca6f23813b8651004bf77985f52)
+        ;
+
+        
+    
+    
+                marker_707d11243a44830686438ff43cf79387.setIcon(icon_9f7b33c09bff31e71393c6f346145721);
+            
+    
+            var marker_c9c7cc461e6f013201cae10181fc6de6 = L.marker(
+                [-37.78509788859067, 144.94203123068968],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_ecfb580e1bfa49899b4effbb1ddcbef1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_14e2dd623285231aa7f23049a160c5d2 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ed2200f3e473527289965d9262954793 = $(`<div id="html_ed2200f3e473527289965d9262954793" style="width: 100.0%; height: 100.0%;">     <b>Manningham Street Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450814<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Tower<br>     <b>Distance from CBD:</b> 3.7 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_14e2dd623285231aa7f23049a160c5d2.setContent(html_ed2200f3e473527289965d9262954793);
+            
+        
+
+        marker_c9c7cc461e6f013201cae10181fc6de6.bindPopup(popup_14e2dd623285231aa7f23049a160c5d2)
+        ;
+
+        
+    
+    
+                marker_c9c7cc461e6f013201cae10181fc6de6.setIcon(icon_ecfb580e1bfa49899b4effbb1ddcbef1);
+            
+    
+            var marker_ae3199bd6f4f2f8485435b3fae1dd3e0 = L.marker(
+                [-37.789037850036166, 144.9284357699595],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_76c3c6bb5a70b166b461f0ae02dd6dcc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1b4fbff8c1a33544e2d822bd18c0f80f = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_22984e9985c8f459e314cfb3a717ca24 = $(`<div id="html_22984e9985c8f459e314cfb3a717ca24" style="width: 100.0%; height: 100.0%;">     <b>Kensington Hall Reserve Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450826<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing<br>     <b>Distance from CBD:</b> 4.1 km<br>     <b>Equipment Count:</b> 1     </div>`)[0];
+                popup_1b4fbff8c1a33544e2d822bd18c0f80f.setContent(html_22984e9985c8f459e314cfb3a717ca24);
+            
+        
+
+        marker_ae3199bd6f4f2f8485435b3fae1dd3e0.bindPopup(popup_1b4fbff8c1a33544e2d822bd18c0f80f)
+        ;
+
+        
+    
+    
+                marker_ae3199bd6f4f2f8485435b3fae1dd3e0.setIcon(icon_76c3c6bb5a70b166b461f0ae02dd6dcc);
+            
+    
+            var marker_ce54f1841be788da90f1e4f6405b7fef = L.marker(
+                [-37.79630622554574, 144.97280123149434],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_b4dad518707f2054d04b333673f697ff = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9291dd7d30220fac4981b25f4bcd363b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_ac3554664bf447c1fc8049368235d78d = $(`<div id="html_ac3554664bf447c1fc8049368235d78d" style="width: 100.0%; height: 100.0%;">     <b>Canning and Palmerston Streets Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450831<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basic equipment<br>     <b>Distance from CBD:</b> 2.1 km<br>     <b>Equipment Count:</b> 0     </div>`)[0];
+                popup_9291dd7d30220fac4981b25f4bcd363b.setContent(html_ac3554664bf447c1fc8049368235d78d);
+            
+        
+
+        marker_ce54f1841be788da90f1e4f6405b7fef.bindPopup(popup_9291dd7d30220fac4981b25f4bcd363b)
+        ;
+
+        
+    
+    
+                marker_ce54f1841be788da90f1e4f6405b7fef.setIcon(icon_b4dad518707f2054d04b333673f697ff);
+            
+    
+            var marker_59d1e422c9f0516269d18f791a75861c = L.marker(
+                [-37.820490837663186, 144.97302701268373],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_aef2a2993306eeaee3c7cf6c69f02277 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fe7bcf7514c3ff34c466c798b6e44cbb = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_afdb758d07628e2287b0db5720f41766 = $(`<div id="html_afdb758d07628e2287b0db5720f41766" style="width: 100.0%; height: 100.0%;">     <b>Riverslide Skate Park</b><br>     <b>Region:</b> Central<br>     <b>Council:</b> 1450832<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basic equipment<br>     <b>Distance from CBD:</b> 1.2 km<br>     <b>Equipment Count:</b> 0     </div>`)[0];
+                popup_fe7bcf7514c3ff34c466c798b6e44cbb.setContent(html_afdb758d07628e2287b0db5720f41766);
+            
+        
+
+        marker_59d1e422c9f0516269d18f791a75861c.bindPopup(popup_fe7bcf7514c3ff34c466c798b6e44cbb)
+        ;
+
+        
+    
+    
+                marker_59d1e422c9f0516269d18f791a75861c.setIcon(icon_aef2a2993306eeaee3c7cf6c69f02277);
+            
+    
+            var marker_fd25f802d6d9bd864512429ab1188d1d = L.marker(
+                [-37.820285121736624, 144.94088305188848],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_6da9797cceb722c9b5e82ee8266a2384 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8f65c0ef06170fe51e9cef02ef64ee65 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_bae884242a54a2ecf7d3a86a5ffc97c6 = $(`<div id="html_bae884242a54a2ecf7d3a86a5ffc97c6" style="width: 100.0%; height: 100.0%;">     <b>Buluk Park Playground</b><br>     <b>Region:</b> West<br>     <b>Council:</b> 1588995<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basic equipment<br>     <b>Distance from CBD:</b> 2.1 km<br>     <b>Equipment Count:</b> 0     </div>`)[0];
+                popup_8f65c0ef06170fe51e9cef02ef64ee65.setContent(html_bae884242a54a2ecf7d3a86a5ffc97c6);
+            
+        
+
+        marker_fd25f802d6d9bd864512429ab1188d1d.bindPopup(popup_8f65c0ef06170fe51e9cef02ef64ee65)
+        ;
+
+        
+    
+    
+                marker_fd25f802d6d9bd864512429ab1188d1d.setIcon(icon_6da9797cceb722c9b5e82ee8266a2384);
+            
+    
+            var marker_bfe85b527325f848601af55866582980 = L.marker(
+                [-37.785385696902736, 144.96275926118628],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_647dd570376ba6cf86040e12d197b713 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_886f24464d70f4e9bff6eaf5e1747cde = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_29b2d72ec5735f956bb3026d71d563c6 = $(`<div id="html_29b2d72ec5735f956bb3026d71d563c6" style="width: 100.0%; height: 100.0%;">     <b>Princes Park South Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1720527<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Sand, Shade, Tower, See Saw<br>     <b>Distance from CBD:</b> 3.1 km<br>     <b>Equipment Count:</b> 6     </div>`)[0];
+                popup_886f24464d70f4e9bff6eaf5e1747cde.setContent(html_29b2d72ec5735f956bb3026d71d563c6);
+            
+        
+
+        marker_bfe85b527325f848601af55866582980.bindPopup(popup_886f24464d70f4e9bff6eaf5e1747cde)
+        ;
+
+        
+    
+    
+                marker_bfe85b527325f848601af55866582980.setIcon(icon_647dd570376ba6cf86040e12d197b713);
+            
+    
+            var marker_8a11d08a72441fa52499b647af20a7e0 = L.marker(
+                [-37.795044731386305, 144.9517539147769],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_3dcf0b59d1d6900045dff53eb9e051fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0190da27ea2b38db9ab26267c6874e3a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_d9a3dfea2db678dd413984d2902c85db = $(`<div id="html_d9a3dfea2db678dd413984d2902c85db" style="width: 100.0%; height: 100.0%;">     <b>NaturePlay Playground Royal Park</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1588994<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basic equipment<br>     <b>Distance from CBD:</b> 2.3 km<br>     <b>Equipment Count:</b> 0     </div>`)[0];
+                popup_0190da27ea2b38db9ab26267c6874e3a.setContent(html_d9a3dfea2db678dd413984d2902c85db);
+            
+        
+
+        marker_8a11d08a72441fa52499b647af20a7e0.bindPopup(popup_0190da27ea2b38db9ab26267c6874e3a)
+        ;
+
+        
+    
+    
+                marker_8a11d08a72441fa52499b647af20a7e0.setIcon(icon_3dcf0b59d1d6900045dff53eb9e051fd);
+            
+    
+            var marker_45dd398589af1f0ba7e63a0d68b6c50d = L.marker(
+                [-37.79377873282799, 144.92359592824823],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_30f334c9e31b7a3d37b096feacce4690 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_44a1f716de34996bd767a7fc4a4d3403 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5863afc0078336f68cb90b3a86b490ae = $(`<div id="html_5863afc0078336f68cb90b3a86b490ae" style="width: 100.0%; height: 100.0%;">     <b>Bayswater Road Park Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450807<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Shade<br>     <b>Distance from CBD:</b> 4.1 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_44a1f716de34996bd767a7fc4a4d3403.setContent(html_5863afc0078336f68cb90b3a86b490ae);
+            
+        
+
+        marker_45dd398589af1f0ba7e63a0d68b6c50d.bindPopup(popup_44a1f716de34996bd767a7fc4a4d3403)
+        ;
+
+        
+    
+    
+                marker_45dd398589af1f0ba7e63a0d68b6c50d.setIcon(icon_30f334c9e31b7a3d37b096feacce4690);
+            
+    
+            var marker_29b7f9a3e6a6d56e1e293a7824249b6d = L.marker(
+                [-37.8260106301916, 144.96835314420716],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_e1ecbfeaf156e9b121dded27fd868071 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d458197c6c59c960123f2a276c842ce5 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_7e59279e5fd85aef5df6bf1961913f3c = $(`<div id="html_7e59279e5fd85aef5df6bf1961913f3c" style="width: 100.0%; height: 100.0%;">     <b>Grant Street Playground</b><br>     <b>Region:</b> Central<br>     <b>Council:</b> 1487286<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Sand<br>     <b>Distance from CBD:</b> 1.5 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_d458197c6c59c960123f2a276c842ce5.setContent(html_7e59279e5fd85aef5df6bf1961913f3c);
+            
+        
+
+        marker_29b7f9a3e6a6d56e1e293a7824249b6d.bindPopup(popup_d458197c6c59c960123f2a276c842ce5)
+        ;
+
+        
+    
+    
+                marker_29b7f9a3e6a6d56e1e293a7824249b6d.setIcon(icon_e1ecbfeaf156e9b121dded27fd868071);
+            
+    
+            var marker_0a1646b78b5300d7bba7b9f4b484c5ef = L.marker(
+                [-37.7988307430471, 144.9403321720667],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_5caca0043e6c3f369bfb12f926bf3651 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9bf3c0224ab9be87fc5507cbbfa18ff6 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_126be17ffbbe56606de24c83eda3aec2 = $(`<div id="html_126be17ffbbe56606de24c83eda3aec2" style="width: 100.0%; height: 100.0%;">     <b>North Melbourne Recreation Reserve Multi Purpose Court</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1775918<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basketball<br>     <b>Distance from CBD:</b> 2.6 km<br>     <b>Equipment Count:</b> 1     </div>`)[0];
+                popup_9bf3c0224ab9be87fc5507cbbfa18ff6.setContent(html_126be17ffbbe56606de24c83eda3aec2);
+            
+        
+
+        marker_0a1646b78b5300d7bba7b9f4b484c5ef.bindPopup(popup_9bf3c0224ab9be87fc5507cbbfa18ff6)
+        ;
+
+        
+    
+    
+                marker_0a1646b78b5300d7bba7b9f4b484c5ef.setIcon(icon_5caca0043e6c3f369bfb12f926bf3651);
+            
+    
+            var marker_3a2db6e2d1620d125b251c827f0fce05 = L.marker(
+                [-37.811744939010325, 144.9818267986077],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_b7603090afc9a68a0ca9059155700b5a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d8b71007b35489e4b5b023dd902a5433 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_cab92a27f788b46f12174b0770483d15 = $(`<div id="html_cab92a27f788b46f12174b0770483d15" style="width: 100.0%; height: 100.0%;">     <b>Fitzroy Gardens Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450805<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Sand, Shade<br>     <b>Distance from CBD:</b> 1.7 km<br>     <b>Equipment Count:</b> 4     </div>`)[0];
+                popup_d8b71007b35489e4b5b023dd902a5433.setContent(html_cab92a27f788b46f12174b0770483d15);
+            
+        
+
+        marker_3a2db6e2d1620d125b251c827f0fce05.bindPopup(popup_d8b71007b35489e4b5b023dd902a5433)
+        ;
+
+        
+    
+    
+                marker_3a2db6e2d1620d125b251c827f0fce05.setIcon(icon_b7603090afc9a68a0ca9059155700b5a);
+            
+    
+            var marker_7ce59bb9ac53eec8d67f9efafab7299e = L.marker(
+                [-37.8220676003373, 144.93654191133373],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_20832f88a08252a85e35edab4018514f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_770616f0bd9b91d5441c90a2eddd1453 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_857cff9360be0cc6e0dd4e974a877bf0 = $(`<div id="html_857cff9360be0cc6e0dd4e974a877bf0" style="width: 100.0%; height: 100.0%;">     <b>Wharfs Landing Park</b><br>     <b>Region:</b> West<br>     <b>Council:</b> 1764817<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basic equipment<br>     <b>Distance from CBD:</b> 2.5 km<br>     <b>Equipment Count:</b> 0     </div>`)[0];
+                popup_770616f0bd9b91d5441c90a2eddd1453.setContent(html_857cff9360be0cc6e0dd4e974a877bf0);
+            
+        
+
+        marker_7ce59bb9ac53eec8d67f9efafab7299e.bindPopup(popup_770616f0bd9b91d5441c90a2eddd1453)
+        ;
+
+        
+    
+    
+                marker_7ce59bb9ac53eec8d67f9efafab7299e.setIcon(icon_20832f88a08252a85e35edab4018514f);
+            
+    
+            var marker_e96888836f69bc09b79e64b0222c1707 = L.marker(
+                [-37.779582393504235, 144.93975987147903],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_e79ed8122a0412a61786d00c757a9fdf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_58725343079f0d065abea42628c4c830 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_dffcb9acff4603bc6f6252ecd97762af = $(`<div id="html_dffcb9acff4603bc6f6252ecd97762af" style="width: 100.0%; height: 100.0%;">     <b>Galada Avenue Reserve Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450833<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Spring<br>     <b>Distance from CBD:</b> 4.3 km<br>     <b>Equipment Count:</b> 2     </div>`)[0];
+                popup_58725343079f0d065abea42628c4c830.setContent(html_dffcb9acff4603bc6f6252ecd97762af);
+            
+        
+
+        marker_e96888836f69bc09b79e64b0222c1707.bindPopup(popup_58725343079f0d065abea42628c4c830)
+        ;
+
+        
+    
+    
+                marker_e96888836f69bc09b79e64b0222c1707.setIcon(icon_e79ed8122a0412a61786d00c757a9fdf);
+            
+    
+            var marker_0171743195f189e2215e6c5147aea29b = L.marker(
+                [-37.79831312148108, 144.9212247231253],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_0abb5391d64cd0e33e00eaa9d0debbb2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16a4a6ba81e88722cddbd1a76a5dcadd = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_5a5c91efa57e57e0f73dffd14ef8b6b9 = $(`<div id="html_5a5c91efa57e57e0f73dffd14ef8b6b9" style="width: 100.0%; height: 100.0%;">     <b>Holland Park Extreme Sports Precinct</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450828<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basic equipment<br>     <b>Distance from CBD:</b> 4.1 km<br>     <b>Equipment Count:</b> 0     </div>`)[0];
+                popup_16a4a6ba81e88722cddbd1a76a5dcadd.setContent(html_5a5c91efa57e57e0f73dffd14ef8b6b9);
+            
+        
+
+        marker_0171743195f189e2215e6c5147aea29b.bindPopup(popup_16a4a6ba81e88722cddbd1a76a5dcadd)
+        ;
+
+        
+    
+    
+                marker_0171743195f189e2215e6c5147aea29b.setIcon(icon_0abb5391d64cd0e33e00eaa9d0debbb2);
+            
+    
+            var marker_27c3c8b5b9bf9adcfb635cd95c133e7f = L.marker(
+                [-37.80718322149278, 144.95159199209743],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_8cc295d9619d5c9e83b57e5cbd1c9ee3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d5434328e22fc8cb1e295af4d14ad6b = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b7e21c24b7e78e25294a15e50bb0e7b3 = $(`<div id="html_b7e21c24b7e78e25294a15e50bb0e7b3" style="width: 100.0%; height: 100.0%;">     <b>Eades Park Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450812<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Slide, Climbing, Shade<br>     <b>Distance from CBD:</b> 1.2 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_9d5434328e22fc8cb1e295af4d14ad6b.setContent(html_b7e21c24b7e78e25294a15e50bb0e7b3);
+            
+        
+
+        marker_27c3c8b5b9bf9adcfb635cd95c133e7f.bindPopup(popup_9d5434328e22fc8cb1e295af4d14ad6b)
+        ;
+
+        
+    
+    
+                marker_27c3c8b5b9bf9adcfb635cd95c133e7f.setIcon(icon_8cc295d9619d5c9e83b57e5cbd1c9ee3);
+            
+    
+            var marker_535e61487c9a6131af0a23468cd866e6 = L.marker(
+                [-37.7987885878955, 144.94393836858487],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_02cc6b5ced4b1cad42911450fefb8ed3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a79fca635079247915b837dcd48495e = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9ffd65a8156ff566b5c3a00e9b54fdf3 = $(`<div id="html_9ffd65a8156ff566b5c3a00e9b54fdf3" style="width: 100.0%; height: 100.0%;">     <b>Gardiner Reserve Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450810<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Climbing, Shade<br>     <b>Distance from CBD:</b> 2.4 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_3a79fca635079247915b837dcd48495e.setContent(html_9ffd65a8156ff566b5c3a00e9b54fdf3);
+            
+        
+
+        marker_535e61487c9a6131af0a23468cd866e6.bindPopup(popup_3a79fca635079247915b837dcd48495e)
+        ;
+
+        
+    
+    
+                marker_535e61487c9a6131af0a23468cd866e6.setIcon(icon_02cc6b5ced4b1cad42911450fefb8ed3);
+            
+    
+            var marker_c8d5a285b207c78bc0e24034cb7adc4b = L.marker(
+                [-37.83903295479282, 144.98047560545143],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_786f6f7d024db5d8e5bf0bf30679deae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bdae515eb21dd660506da26f1a18afd2 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_eae46c536f5fffdbdc181dca1fa2eb56 = $(`<div id="html_eae46c536f5fffdbdc181dca1fa2eb56" style="width: 100.0%; height: 100.0%;">     <b>Fawkner Park Toddler Playspace</b><br>     <b>Region:</b> South<br>     <b>Council:</b> 1450835<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide<br>     <b>Distance from CBD:</b> 3.2 km<br>     <b>Equipment Count:</b> 2     </div>`)[0];
+                popup_bdae515eb21dd660506da26f1a18afd2.setContent(html_eae46c536f5fffdbdc181dca1fa2eb56);
+            
+        
+
+        marker_c8d5a285b207c78bc0e24034cb7adc4b.bindPopup(popup_bdae515eb21dd660506da26f1a18afd2)
+        ;
+
+        
+    
+    
+                marker_c8d5a285b207c78bc0e24034cb7adc4b.setIcon(icon_786f6f7d024db5d8e5bf0bf30679deae);
+            
+    
+            var marker_5eb5ad53fa39d0a5a803ded5b145ed10 = L.marker(
+                [-37.79525908086376, 144.93078140282728],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_3b1acb492749bce76fc51deb6d08184e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bdd10f48e490352f5ff8f2082b728674 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_f88f07710818aa6b7192b2cdbcafce83 = $(`<div id="html_f88f07710818aa6b7192b2cdbcafce83" style="width: 100.0%; height: 100.0%;">     <b>Bellair Street Reserve Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450809<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Spring<br>     <b>Distance from CBD:</b> 3.5 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_bdd10f48e490352f5ff8f2082b728674.setContent(html_f88f07710818aa6b7192b2cdbcafce83);
+            
+        
+
+        marker_5eb5ad53fa39d0a5a803ded5b145ed10.bindPopup(popup_bdd10f48e490352f5ff8f2082b728674)
+        ;
+
+        
+    
+    
+                marker_5eb5ad53fa39d0a5a803ded5b145ed10.setIcon(icon_3b1acb492749bce76fc51deb6d08184e);
+            
+    
+            var marker_123ca3a000075ea17cf82b05e6213880 = L.marker(
+                [-37.794654989366286, 144.9191944946368],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_a0a3c0a9d85fad73d1b72e77249754a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2b5d6f1be22501221fd1b345afe3e7c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_da99c8477fc84c5cbbacf8b4dbe0a638 = $(`<div id="html_da99c8477fc84c5cbbacf8b4dbe0a638" style="width: 100.0%; height: 100.0%;">     <b>The Crescent Reserve Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450834<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basketball<br>     <b>Distance from CBD:</b> 4.4 km<br>     <b>Equipment Count:</b> 1     </div>`)[0];
+                popup_c2b5d6f1be22501221fd1b345afe3e7c.setContent(html_da99c8477fc84c5cbbacf8b4dbe0a638);
+            
+        
+
+        marker_123ca3a000075ea17cf82b05e6213880.bindPopup(popup_c2b5d6f1be22501221fd1b345afe3e7c)
+        ;
+
+        
+    
+    
+                marker_123ca3a000075ea17cf82b05e6213880.setIcon(icon_a0a3c0a9d85fad73d1b72e77249754a0);
+            
+    
+            var marker_25649813e76d2bf49aff559d9c5b51b8 = L.marker(
+                [-37.82015371307213, 144.94476081594655],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_1b6fb48ec6e45b5a0897b6b0893e746c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d414d3e05b3a27020db6b6697125cd49 = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_9c83654d3176d7db4b2bbfe45ba61197 = $(`<div id="html_9c83654d3176d7db4b2bbfe45ba61197" style="width: 100.0%; height: 100.0%;">     <b>Victoria Green Playground</b><br>     <b>Region:</b> West<br>     <b>Council:</b> 1513026<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Basic equipment<br>     <b>Distance from CBD:</b> 1.8 km<br>     <b>Equipment Count:</b> 0     </div>`)[0];
+                popup_d414d3e05b3a27020db6b6697125cd49.setContent(html_9c83654d3176d7db4b2bbfe45ba61197);
+            
+        
+
+        marker_25649813e76d2bf49aff559d9c5b51b8.bindPopup(popup_d414d3e05b3a27020db6b6697125cd49)
+        ;
+
+        
+    
+    
+                marker_25649813e76d2bf49aff559d9c5b51b8.setIcon(icon_1b6fb48ec6e45b5a0897b6b0893e746c);
+            
+    
+            var marker_f5ff43a3a34bef2da181223d75c4da55 = L.marker(
+                [-37.79356615908827, 144.94008253076515],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_83b5649b86df7184464da317576cba9e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6fa60c3b7e1e6a713bfce6647f237d6a = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_b294e008dfe0cedd87601cf134897b24 = $(`<div id="html_b294e008dfe0cedd87601cf134897b24" style="width: 100.0%; height: 100.0%;">     <b>North Melbourne Community Centre Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450825<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Shade<br>     <b>Distance from CBD:</b> 3.0 km<br>     <b>Equipment Count:</b> 2     </div>`)[0];
+                popup_6fa60c3b7e1e6a713bfce6647f237d6a.setContent(html_b294e008dfe0cedd87601cf134897b24);
+            
+        
+
+        marker_f5ff43a3a34bef2da181223d75c4da55.bindPopup(popup_6fa60c3b7e1e6a713bfce6647f237d6a)
+        ;
+
+        
+    
+    
+                marker_f5ff43a3a34bef2da181223d75c4da55.setIcon(icon_83b5649b86df7184464da317576cba9e);
+            
+    
+            var marker_ed660ddd8363be9221951ea4747c76f4 = L.marker(
+                [-37.808765867846496, 144.94479636670366],
+                {
+}
+            ).addTo(marker_cluster_31445e0c9c7448f276d2b8c490e8d159);
+        
+    
+            var icon_76f7fbe6b3a753e804adf5bf4e4c79ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "child",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1e015e17208ddb38e37e5766bb159d0c = L.popup({
+  "maxWidth": 400,
+});
+
+        
+            
+                var html_754d952ca4ceb8680484d98715ad63d7 = $(`<div id="html_754d952ca4ceb8680484d98715ad63d7" style="width: 100.0%; height: 100.0%;">     <b>Hawke & Adderley Streets Playground</b><br>     <b>Region:</b> North<br>     <b>Council:</b> 1450811<br>     <b>Accessible:</b> No<br>     <b>Equipment:</b> Swing, Slide, Sand<br>     <b>Distance from CBD:</b> 1.7 km<br>     <b>Equipment Count:</b> 3     </div>`)[0];
+                popup_1e015e17208ddb38e37e5766bb159d0c.setContent(html_754d952ca4ceb8680484d98715ad63d7);
+            
+        
+
+        marker_ed660ddd8363be9221951ea4747c76f4.bindPopup(popup_1e015e17208ddb38e37e5766bb159d0c)
+        ;
+
+        
+    
+    
+                marker_ed660ddd8363be9221951ea4747c76f4.setIcon(icon_76f7fbe6b3a753e804adf5bf4e4c79ae);
+            
+    
+            marker_cluster_31445e0c9c7448f276d2b8c490e8d159.addTo(map_85626ba739903c9177913ad2049a5769);
+        
+</script>
+</html>
